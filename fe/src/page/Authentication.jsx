@@ -5,7 +5,7 @@ import LoginAbi from '../assets/Abi/Authentication.json';
 
 import backgroundImage from '../assets/pxfuel.jpg';
 
-const Authentication = () => {
+const Authentication = ({ setIsAuthenticated }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [loginError, setLoginError] = useState(null);
   const navigate = useNavigate();
@@ -33,8 +33,8 @@ const Authentication = () => {
       });
 
       setIsLoading(false);
+      setIsAuthenticated(true); // Set authentication state to true
       navigate('/Home');
-
     } catch (error) {
       console.error('Login failed:', error);
       setLoginError('Invalid username or password');

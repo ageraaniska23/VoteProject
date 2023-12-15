@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import backgroundImage from '../assets/alam.jpg'; // Import the background image
+// import backgroundImage from '../assets/alam.jpg'; // Import the background image
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const Hero = () => {
     <div className="h-screen">
       <section
         className="bg-white dark:bg-gray-900 w-full h-full "
-        style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        // style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
         <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 h-full">
           <img
@@ -23,10 +23,10 @@ const Hero = () => {
           />
           <div className="mt-4 text-lgh-full">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-              Ayo ciptakan pemilihan yang jujur dan transparan di platform ini.
+              Ayo ciptakan Demokrasi yang jujur dan transparan.
             </h2>
             <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
-              Platform ini membantu Anda dalam memilih pempimpin yang diadakan secara votong atau Pemilu dengan memanfaatkan teknologi Blockchain supaya lebih transparat dan mengurangi resiko kecurangan, jaringan yang digunakan adalah BSC testnet
+              Platform ini memeberikan fitur pemilihan, pemantauan perhitungan suara dan pengawasan secara real time.
             </p>
             <button
               onClick={handleLoginButtonClick}
