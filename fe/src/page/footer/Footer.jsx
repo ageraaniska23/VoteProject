@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="sm:flex sm:items-center sm:justify-between">
       <div className="md:flex md:items-center md:gap-2 ">
         <img src="https://www.svgrepo.com/show/92013/vote.svg" alt="Logo" className="h-8" />
-        <span className="text-white font-semibold">VoteChain</span>
+        <span className="text-white font-semibold">KuVt</span>
       </div>
 
       <p className="mt-8 text-xs text-gray-500 sm:mt-0">

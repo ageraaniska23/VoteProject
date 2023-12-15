@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+// import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useNavigate } from 'react-router-dom';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
-function NavBar({ setIsAuthenticated }) {
+function NavBar({ setIsAuthenticated, isAuthenticated }) {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -31,22 +32,28 @@ function NavBar({ setIsAuthenticated }) {
 
   return (
     <>
-      <nav className="bg-black dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 mbn-0 ">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <nav className="bg-black dark:bg-gray-900 fixed w-full z-20 top-0 border-b border-gray-200 dark:border-gray-600 mbn-0 left-0 right-0 ">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
           <a className="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="https://www.svgrepo.com/show/92013/vote.svg" className="h-8 " alt="Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">KuVt</span>
           </a>
-          <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <ConnectButton />
-            <button
-              onClick={handleLogout}
-              className="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
-            >
-              <span className="relative px-3 py-1.5 transition-all ease-in duration-75">
-                Keluar
-              </span>
-            </button>
+          <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse items-center">
+            <ConnectButton chainStatus="icon" accountStatus="none" />
+            {isAuthenticated && (
+              <button
+                onClick={handleLogout}
+                className=""
+              >
+                <span className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat ">
+                  <img
+                    src="https://www.svgrepo.com/show/199918/logout.svg"
+                    alt="Logo"
+                    className="w-6 h-6 max-w-xs transition duration-300 ease-in-out hover:scale-110" // Sesuaikan ukuran logo sesuai kebutuhan Anda
+                  />
+                </span>
+              </button>
+            )}
             
             <button
               onClick={toggleMobileMenu}

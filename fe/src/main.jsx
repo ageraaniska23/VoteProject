@@ -54,7 +54,7 @@ const wagmiConfig = createConfig({
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider chains={chains}>
+      <RainbowKitProvider modalSize="compact" chains={chains}>
         <App />
       </RainbowKitProvider>
     </WagmiConfig>
