@@ -11,14 +11,15 @@ import SignUp from './page/SignUp';
 import NotLogin from './page/notLogin';
 
 function App() {
+  // Load authentication state from localStorage on component mount
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
-    // Get authentication status from local storage on component mount
-    return localStorage.getItem('isAuthenticated') === 'true';
+    const storedAuth = localStorage.getItem('isAuthenticated');
+    return storedAuth ? JSON.parse(storedAuth) : false;
   });
 
+  // Save authentication state to localStorage whenever it changes
   useEffect(() => {
-    // Save authentication status to local storage whenever it changes
-    localStorage.setItem('isAuthenticated', isAuthenticated);
+    localStorage.setItem('isAuthenticated', JSON.stringify(isAuthenticated));
   }, [isAuthenticated]);
 
   return (

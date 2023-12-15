@@ -26,7 +26,7 @@ const SignUp = ({ setIsAuthenticated }) => {
         const email = event.target.email.value;
   
         await writeContract({
-          address: '0xFe056e3c4273323DAbCAc6B62eaaCff6e9D64995', // Replace with your actual contract address
+          address: '0xFe056e3c4273323DAbCAc6B62eaaCff6e9D64995', 
           abi: SignABi,
           functionName: 'signUp',
           args: [username, password, email],
