@@ -24,9 +24,14 @@ function App() {
 
   return (
     <Router>
-      <SideBar />
+      <SideBar setIsAuthenticated={setIsAuthenticated} />
       <Routes>
-        <Route exact path="/" element={<HomePage />} />
+      <Route exact path="/" element={<HomePage />} />
+        {/* <Route
+          exact
+          path="/"
+          element={isAuthenticated ? <HomePage /> : <Navigate to="/Login" />}
+        /> */}
         <Route
           exact
           path="/Login"
@@ -36,12 +41,12 @@ function App() {
         <Route
           exact
           path="/Home"
-          element={isAuthenticated ? <Home /> : <Navigate to="/notLogin" />}
+          element={isAuthenticated ? <Home /> : <Navigate to="/Login" />}
         />
         <Route
           exact
           path="/Admin"
-          element={isAuthenticated ? <Admin /> : <Navigate to="/notLogin" />}
+          element={isAuthenticated ? <Admin /> : <Navigate to="/Login" />}
         />
         <Route exact path="/notLogin" element={<NotLogin />} />
       </Routes>
