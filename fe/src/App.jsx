@@ -9,6 +9,7 @@ import Home from './page/Home';
 import Admin from './page/Admin/Admin';
 import SignUp from './page/SignUp';
 import NotLogin from './page/notLogin';
+import About from './page/About'
 
 function App() {
   // Load authentication state from localStorage on component mount
@@ -44,6 +45,7 @@ function App() {
           element={isAuthenticated ? <Admin /> : <Navigate to="/Login" />}
         />
         <Route exact path="/notLogin" element={<NotLogin />} />
+        <Route exact path="/About" element={<About />} />
       </Routes>
       <Footer />
     </Router>
