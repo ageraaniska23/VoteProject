@@ -27,7 +27,7 @@ const Authentication = ({ setIsAuthenticated }) => {
       const password = event.target.password.value;
 
       await writeContract({
-        address: '0xFe056e3c4273323DAbCAc6B62eaaCff6e9D64995',
+        address: '0xA0b9Dc94FDbcE89EBF9B3a99918207c5fB5efa24',
         abi: LoginAbi,
         functionName: 'login',
         args: [username, password],
