@@ -1,7 +1,7 @@
 // App.jsx
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Authentication from './page/Authentication';
+import Authentication from './page/Signin';
 import HomePage from './page/HomePage';
 import Navbar from './page/Navbar/NavBar';
 import Footer from './page/footer/Footer';

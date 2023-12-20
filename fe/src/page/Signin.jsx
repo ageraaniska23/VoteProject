@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { writeContract } from '@wagmi/core';
@@ -6,7 +7,7 @@ import LoginAbi from '../assets/Abi/Authentication.json';
 
 import backgroundImage from '../assets/pxfuel.jpg';
 
-const Authentication = ({ setIsAuthenticated }) => {
+const Authentication = ({ setIsAuthenticated, setWalletAddress }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [loginError, setLoginError] = useState(null);
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const Authentication = ({ setIsAuthenticated }) => {
       const password = event.target.password.value;
 
       await writeContract({
-        address: '0xFe056e3c4273323DAbCAc6B62eaaCff6e9D64995',
+        address: '0xA0b9Dc94FDbcE89EBF9B3a99918207c5fB5efa24',
         abi: LoginAbi,
         functionName: 'login',
         args: [username, password],

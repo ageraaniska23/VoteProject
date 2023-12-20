@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-// import backgroundImage from '../assets/alam.jpg'; // Import the background image
+import backgroundImage from '../assets/image/indo.jpg' // Import the background image
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const Hero = () => {
     <div className="h-screen">
       <section
         className="bg-white dark:bg-gray-900 w-full h-full "
-        // style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
         <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 h-full">
           <img
@@ -25,7 +25,7 @@ const Hero = () => {
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
               Ayo ciptakan Demokrasi yang jujur dan transparan.
             </h2>
-            <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
+            <p className="mb-6 text-white md:text-lg dark:text-white font-bold">
               Platform ini memeberikan fitur pemilihan, pemantauan perhitungan suara dan pengawasan secara real time.
             </p>
             <button

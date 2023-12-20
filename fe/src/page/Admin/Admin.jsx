@@ -76,7 +76,7 @@ const Admin = () => {
                 </thead>
                 <tbody>
                   <tr className="border-b dark:border-gray-700">
-                    {/* ... existing code ... */}
+                    
                   </tr>
                 </tbody>
               </table>
