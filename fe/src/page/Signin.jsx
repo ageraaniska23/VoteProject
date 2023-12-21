@@ -36,7 +36,7 @@ const Authentication = ({ setIsAuthenticated, setWalletAddress }) => {
 
       setIsLoading(false);
       setIsAuthenticated(true); // Set authentication state to true
-      navigate('/Home');
+      navigate('/Vote');
     } catch (error) {
       console.error('Login failed:', error);
       setLoginError('Invalid username or password');
