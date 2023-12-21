@@ -7,7 +7,7 @@ const AboutUs = () => {
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-40">
           <div className="">
             <h2 className="mb-4 mt-14 text-2xl sm:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center">About Us</h2>
-            <p className="font-light text-gray-500 lg:mb-8 sm:text-lg dark:text-gray-400 text-center">
+            <p className="font-light text-gray-500 lg:mb-8 sm:text-lg dark:text-gray-400 text-center mb-14">
               Platform ini didesain untuk meningkatkan tingkat keamanan, kejujuran, dan transparansi dalam proses pemilihan suara atau voting. 
               Pendekatan ini diterapkan melalui penggunaan kontrak pintar (smart contract) Solidity yang berjalan di Ethereum Virtual Machine (EVM). 
               Jaringan yang diadopsi dalam proyek ini adalah Binance Smart Chain (BSC) testnet. Dengan memanfaatkan teknologi blockchain, 
