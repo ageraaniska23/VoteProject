@@ -11,7 +11,7 @@ import SignUp from './page/SignUp';
 import NotLogin from './page/notLogin';
 import About from './page/About';
 import Vote from './page/vote';
-import Report from'./page/Contact';
+import Contact from'./page/Contact';
 function App() {
   // Load authentication state from localStorage on component mount
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
@@ -47,7 +47,7 @@ function App() {
           element={isAuthenticated ? <Admin /> : <Navigate to="/Login" />}
         />
         <Route exact path="/notLogin" element={<NotLogin />} />
-        <Route exact path="/Report" element={<Report />} />
+        <Route exact path="/Contact" element={<Contact />} />
         <Route exact path="/About" element={<About />} />
       </Routes>
       <Footer />
