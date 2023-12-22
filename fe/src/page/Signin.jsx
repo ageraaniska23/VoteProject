@@ -63,7 +63,7 @@ const Authentication = ({ setIsAuthenticated, setWalletAddress }) => {
               Username/Email
               <input
                 id="username"
-                className="shadow mb-4 appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow mb-4 appearance-none border rounded-xl w-full py-2 px-3 text-white bg-transparent"
                 type="text"
                 placeholder="Username/Email"
                 name="username"
@@ -74,7 +74,7 @@ const Authentication = ({ setIsAuthenticated, setWalletAddress }) => {
               Password
               <input
                 id="password"
-                className="shadow mb-4 appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow mb-4 appearance-none border rounded-xl w-full py-2 px-3 text-white bg-transparent"
                 type="password"
                 placeholder="Password"
                 name="password"

@@ -1,38 +1,50 @@
-import React, { useState } from 'react';
-// import { ConnectButton } from '@rainbow-me/rainbowkit';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 function NavBar({ setIsAuthenticated, isAuthenticated }) {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [navbarBackground, setNavbarBackground] = useState('bg-transparent');
 
   const handleLogout = () => {
-    // Open the confirmation modal
     setIsModalOpen(true);
   };
 
   const handleConfirmLogout = () => {
-    // Close the modal and perform the logout action
     setIsModalOpen(false);
     setIsAuthenticated(false);
     navigate('/');
   };
 
   const handleCloseModal = () => {
-    // Close the modal without performing any action
     setIsModalOpen(false);
   };
-
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 50) {
+        setNavbarBackground('bg-black dark:bg-gray-900');
+      } else {
+        setNavbarBackground('bg-transparent');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
-      <nav className="bg-black dark:bg-gray-900 fixed w-full z-20 top-0 border-b border-gray-200 dark:border-gray-600 mbn-0 left-0 right-0 ">
+      <nav  className={`fixed w-full z-20 top-0 ${navbarBackground}`}>
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
           <a className="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="https://www.svgrepo.com/show/92013/vote.svg" className="h-8 " alt="Logo" />

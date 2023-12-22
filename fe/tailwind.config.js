@@ -9,5 +9,5 @@ export default {
       animation: ['motion-reduce'],
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }

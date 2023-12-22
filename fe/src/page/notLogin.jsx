@@ -12,6 +12,7 @@ const NotLogin = () => {
         </div>
       </div>
     </section>
+    
   );
 };
 
