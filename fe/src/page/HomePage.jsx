@@ -1,47 +1,75 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import backgroundImage from '../assets/image/indo.jpg' // Import the background image
+
+const images = [
+  'https://img.freepik.com/free-vector/asian-rice-field-terraces-morning-mountains-landscape-paddy-plantation-cascades-farm-mount-water-channel-with-growing-plants-scenery-meadow-with-green-grass-cartoon-vector-illustration_107791-10452.jpg?size=626&ext=jpg&ga=GA1.2.880816621.1702890187&semt=ais',
+  'https://img.freepik.com/free-photo/flag-indonesia_1401-133.jpg?size=626&ext=jpg&ga=GA1.2.880816621.1702890187&semt=sph',
+  
+];
 
 const Hero = () => {
   const navigate = useNavigate();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handleLoginButtonClick = () => {
     navigate('/Home');
   };
 
+  const handleNextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const handlePrevImage = () => {
+    setCurrentImageIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
+  };
+
+  useEffect(() => {
+    const slideshowInterval = setInterval(() => {
+      handleNextImage();
+    }, 3000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(slideshowInterval);
+  }, []);
+
   return (
-    <div className="h-screen">
-      <section
-        className="bg-white dark:bg-gray-900 w-full h-full "
-        style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-      >
-        <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 h-full">
-          <img
-            className="w-full hidden dark:block mt-14"
-            src="https://www.svgrepo.com/show/70986/vote.svg"
-            alt="dashboard image"
-          />
-          <div className="mt-4 text-lgh-full">
-            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-              Ayo ciptakan Demokrasi yang jujur dan transparan.
-            </h2>
-            <p className="mb-6 text-white md:text-lg dark:text-white font-bold">
-              Platform ini memeberikan fitur pemilihan, pemantauan perhitungan suara dan pengawasan secara real time.
-            </p>
-            <button
-              onClick={handleLoginButtonClick}
-              className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
-            >
-              <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                Get Started
-              </span>
-            </button>
-          </div>
+    <div
+      className="hero min-h-screen relative"
+      style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
+    >
+      <div className="hero-overlay bg-opacity-50"></div>
+      <div className="hero-content text-center text-neutral-content relative z-10">
+        <div className="max-w-md">
+          <h1 className="mb-5 text-5xl font-bold text-white">SELAMAT DATANG DI KuVt Project</h1>
+          <p className="mb-5 font-serif text-white">
+            Kami menyediakan sebuah platform yang bisa digunakan untuk voting yang berteknologi blockchain atau bisa disebut juga dengan website voring berbasis Web3.
+          </p>
+          <button
+            onClick={handleLoginButtonClick}
+            className="btn btn-primary bg-accent rounded-3xl"
+          >
+            Get Started
+          </button>
         </div>
-        
-      </section>
-      
-      
+      </div>
+      <div className="absolute inset-y-0 left-0 flex items-center">
+        <button
+          onClick={handlePrevImage}
+          className="arrow-button left-4 text-white text-3xl"
+        >
+          &lt;
+        </button>
+      </div>
+      <div className="absolute inset-y-0 right-0 flex items-center">
+        <button
+          onClick={handleNextImage}
+          className="arrow-button right-4 text-white text-3xl"
+        >
+          &gt;
+        </button>
+      </div>
     </div>
   );
 };
