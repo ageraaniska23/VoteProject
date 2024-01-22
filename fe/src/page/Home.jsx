@@ -1,19 +1,19 @@
-import React from 'react';
-
 const Home = () => {
   return (
-    <section className="bg-white dark:bg-gray-900 h-screen flex items-center">
-      <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div className="mx-auto max-w-screen-sm text-center">
-          <h1 className="mb-4 mt-24 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600 dark:text-primary-500 text-white">404</h1>
-          <p className="mb-4 text-3xl tracking-tight font-bold text-white md:text-4xl dark:text-white">belum selesai boss.</p>
-          <p className="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">tunggu sampai selesai dulu ya boss, sabar </p>
-          <a href="/" className="inline-flex text-white bg-blue-500 hover:bg-cyan-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-xl text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 my-4">Back to Homepage</a>
+    <div className="w-full bg-gray-900">
+      <div className="stats bg-primary text-primary-content mt-24">
+        <div className="stat">
+          <div className="stat-title text-white">Jumlah Pemilih</div>
+          <div className="stat-value">0000000</div>
+        </div>
+
+        <div className="stat">
+          <div className="stat-title text-white">yang sudah memilih</div>
+          <div className="stat-value">00000000</div>
         </div>
       </div>
-      
-    </section>
+    </div>
   );
-};
+};  
 
 export default Home;

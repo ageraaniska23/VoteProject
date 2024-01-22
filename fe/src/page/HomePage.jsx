@@ -42,9 +42,10 @@ const Hero = () => {
       <div className="hero-overlay bg-opacity-50"></div>
       <div className="hero-content text-center text-neutral-content relative z-10">
         <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold text-white">SELAMAT DATANG DI KuVt Project</h1>
+          <h1 className="mb-2 text-5xl font-bold text-white">WELCOME TO   </h1>
+          <h1 className='mb-2 text-3xl font-bold italic text-green-400'>KuVt Project</h1>
           <p className="mb-5 font-serif text-white">
-            Kami menyediakan sebuah platform yang bisa digunakan untuk voting yang berteknologi blockchain atau bisa disebut juga dengan website voring berbasis Web3.
+            Mari kita wujudkan demokrasi yang adil dan transparant.
           </p>
           <button
             onClick={handleLoginButtonClick}
