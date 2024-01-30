@@ -15,6 +15,8 @@ const Hero = () => {
     navigate('/Home');
   };
 
+
+  
   const handleNextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
