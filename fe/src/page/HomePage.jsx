@@ -36,7 +36,7 @@ const Hero = () => {
 
   return (
     <div
-      className="hero min-h-screen relative"
+      className="hero min-h-  creen relative"
       style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
     >
       <div className="hero-overlay bg-opacity-50"></div>

@@ -12,6 +12,7 @@ const Home = () => {
           <div className="stat-value">00000000</div>
         </div>
       </div>
+      
     </div>
   );
 };  

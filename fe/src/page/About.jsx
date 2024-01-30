@@ -17,7 +17,7 @@ const AboutUs = () => {
           <div className="justify-center">
             <div className="items-center bg-gray-50 rounded-xl shadow sm:flex dark:bg-gray-800 dark:border-gray-700 ">
               <a>
-                <img className="w-full h-auto rounded-xl sm:rounded-xl" src="https://media.licdn.com/dms/image/C5603AQFBpUyU0jPUyA/profile-displayphoto-shrink_400_400/0/1651417649116?e=1707955200&v=beta&t=dpE3v1Uh6x4PZg-0hDcSTO-qGGF1MRfIILxUAHWsXt0" alt="Bonnie Avatar" />
+                <img className="w-full h-auto rounded-xl sm:rounded-xl" src="https://media.licdn.com/dms/image/D5603AQGwQV3MyrEmNA/profile-displayphoto-shrink_400_400/0/1706155189511?e=1712188800&v=beta&t=zzkwCe5oMZvNQl9Taq9L8u6_LHvwV9ofxzqviGHK11A" alt="Bonnie Avatar" />
               </a>
               <div className="p-6 sm:p-10">
                 <h3 className="text-xl sm:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-2 sm:mb-7">
