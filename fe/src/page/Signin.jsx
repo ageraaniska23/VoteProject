@@ -6,7 +6,7 @@ import LoginAbi from "../assets/Abi/Authentication.json";
 
 import backgroundImage from "../assets/pxfuel.jpg";
 
-const Authentication = ({ setIsAuthenticated, setWalletAddress }) => {
+const Authentication = ({ setIsAuthenticated }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [loginError, setLoginError] = useState(null);
   const navigate = useNavigate();
