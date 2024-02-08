@@ -9,7 +9,7 @@ const AboutUs = () => {
             <h2 className="mb-4 mt-14 text-2xl sm:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center">
               About Us
             </h2>
-            <p className="font-light text-gray-500 lg:mb-8 sm:text-lg dark:text-gray-400 text-center mb-14">
+            <p className="animate-fade-up font-light text-gray-500 lg:mb-8 sm:text-lg dark:text-gray-400 text-center mb-14">
               Platform ini didesain untuk meningkatkan tingkat keamanan,
               kejujuran, dan transparansi dalam proses pemilihan suara atau
               voting. Pendekatan ini diterapkan melalui penggunaan kontrak
