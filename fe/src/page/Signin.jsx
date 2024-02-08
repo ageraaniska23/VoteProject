@@ -102,7 +102,7 @@ const Authentication = ({ setIsAuthenticated }) => {
             </button>
           </form>
           <p className="text-gray-300 mt-4 text-center">
-          Don't have an account yet?{" "}
+            Don't have an account yet?{" "}
             <Link
               to="/SignUp"
               className="text-cyan-800 hover:underline transition-all"
