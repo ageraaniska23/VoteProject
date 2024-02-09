@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
+// eslint-disable-next-line react/prop-types
 function NavBar({ setIsAuthenticated, isAuthenticated }) {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,9 +32,9 @@ function NavBar({ setIsAuthenticated, isAuthenticated }) {
       const scrollPosition = window.scrollY;
       if (scrollPosition > 50) {
         // setNavbarBackground('bg-black dark:bg-gray-900');
-        setNavbarBackground('backdrop-blur-md scale-100 bg-white/10');
+        setNavbarBackground('backdrop-blur-md scale-100 bg-black/50');
       } else {
-        setNavbarBackground('backdrop-blur-md scale-100 bg-black/30');
+        setNavbarBackground('backdrop-blur-md scale-100 bg-black/10');
       }
     };
 
@@ -62,7 +63,7 @@ function NavBar({ setIsAuthenticated, isAuthenticated }) {
                   <img
                     src="https://www.svgrepo.com/show/199918/logout.svg"
                     alt="Logo"
-                    className="w-6 h-6 max-w-xs transition duration-300 ease-in-out hover:scale-110" // Sesuaikan ukuran logo sesuai kebutuhan Anda
+                    className="w-6 h-6 max-w-xs transition duration-300 ease-in-out hover:scale-110" 
                   />
                 </span>
               </button>
@@ -87,7 +88,7 @@ function NavBar({ setIsAuthenticated, isAuthenticated }) {
             <ul className="flex items-center gap-6 text-sm">
               <li>
                 <a
-                  className="block py-2 px-3 text-gray-900 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 px-3 font-bold font-serif text-gray-900 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                   href="/Home"
                 >
                   Home
@@ -95,7 +96,7 @@ function NavBar({ setIsAuthenticated, isAuthenticated }) {
               </li>
               <li>
                 <a
-                  className="block py-2 px-3 text-gray-900 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 px-3 font-bold font-serif text-gray-900 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                   href="/Vote"
                 >
                   Vote
@@ -103,7 +104,7 @@ function NavBar({ setIsAuthenticated, isAuthenticated }) {
               </li>
               <li>
                 <a
-                  className="block py-2 px-3 text-gray-900 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 px-3 font-bold font-serif text-gray-900 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                   href="/Contact"
                 >
                   Contact
@@ -111,7 +112,7 @@ function NavBar({ setIsAuthenticated, isAuthenticated }) {
               </li>
               <li>
                 <a
-                  className="block py-2 px-3 text-gray-900 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 px-3 font-bold font-serif text-gray-900 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                   href="/About"
                 >
                   About Us

@@ -8,6 +8,11 @@ import image4 from "../assets/image/indo1.jpg";
 import image5 from "../assets/image/indo2.jpg";
 const images = [image2, imaage3, image4, image5];
 
+import transparent from "../assets/image/card/transparent.jpg";
+import decentral from "../assets/image/card/desentral.jpg";
+import funtion from "../assets/image/card/function.jpg";
+import aman from "../assets/image/card/aman.jpg";
+
 const Hero = () => {
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -27,19 +32,19 @@ const Hero = () => {
   useEffect(() => {
     const slideshowInterval = setInterval(() => {
       handleNextImage();
-    }, 2000);
+    }, 2500);
 
     // Cleanup interval on component unmount
     return () => clearInterval(slideshowInterval);
   }, []);
 
   return (
-    <div className="bg-gray-800">
+    <div className="bg-white">
       <div
         className="px-6 sm:py-20 py-10 font-[sans-serif]"
         style={{
           backgroundImage: `url(${images[currentImageIndex]})`,
-          minHeight: "35vh",
+          minHeight: "40vh",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -56,7 +61,7 @@ const Hero = () => {
               onClick={handleHomeButtonClick}
               className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center bg-blue-500 hover:bg-cyan-400 rounded-md text-white"
             >
-              Mulai
+              Explore
             </button>
             <button
               onClick={handleLoginButtonClick}
@@ -70,7 +75,7 @@ const Hero = () => {
 
       <section>
         <div className="flex flex-col items-center px-5 py-8 mx-auto mt-24">
-          <div className="flex flex-col w-full mb-8 prose text-left max-w-max lg:max-w-2xl">
+          <div className="flex flex-col w-full prose text-left max-w-max lg:max-w-2xl">
             <div className="w-full mx-auto">
               <h1>Apa itu KuVt Project?.</h1>
 
@@ -85,41 +90,15 @@ const Hero = () => {
           </div>
         </div>
         <div className="items-center w-full px-5">
-          <div className="flex flex-wrap justify-center w-full mx-auto prose max-w-max lg:max-w-3xl">
-            <div className="relative justify-center lg:px-4">
-              <div className="lg:grid lg:grid-cols-2">
-                <div className="p-8">
-                  <h1 className="">Short length headline.</h1>
-                  <p>
-                    You're about to launch soon and must be 100% focused on your
-                    product. Don't loose precious days designing, coding the
-                    landing page and testing .
-                  </p>
-                  <a
-                    href="#"
-                    className="inline-flex items-center mt-4 font-semibold text-blue-600 lg:mb-0 hover:text-neutral-600"
-                    title="read more"
-                  >
-                    {" "}
-                    Read More »{" "}
-                  </a>
-                </div>
-                <div className="p-8">
-                  <h1 className="">Short length headline.</h1>
-                  <p>
-                    You're about to launch soon and must be 100% focused on your
-                    product. Don't loose precious days designing, coding the
-                    landing page and testing .
-                  </p>
-                  <a
-                    href="#"
-                    className="inline-flex items-center mt-4 font-semibold text-blue-600 lg:mb-0 hover:text-neutral-600"
-                    title="read more"
-                  >
-                    {" "}
-                    Read More »{" "}
-                  </a>
-                </div>
+          <div className="flex flex-wrap  w-full mx-auto prose max-w-max lg:max-w-3xl">
+            <div className="relative lg:px-4">
+              <div className="p-8">
+                <h1 className="font-bold">
+                  Di platform ini, anda dapat memilih :
+                </h1>
+                <li>Pemilihan Presiden</li>
+                <li>Pemilihan Kepala Daerah (Gubernur, Walikota/Bupati)</li>
+                <li>Dewan Perwakilan Rakyat (DPR RI dan DPRD)</li>
               </div>
             </div>
           </div>
@@ -127,13 +106,78 @@ const Hero = () => {
       </section>
 
       <div className="w-full p-4 text-center mt-24">
-        <h5 className="mb-9 text-3xl font-bold  dark:black">
-          Diikuti oleh Banyak Partai Politik
+        <h5 className="mb-9 text-3xl font-bold dark:black">Kunggulan KuVt :</h5>
+        <div className="max-w-screen-lg mx-auto grid grid-cols-2 gap-8 justify-center sm:grid-cols-4 rtl:space-x-reverse mb-12">
+          <div className="flex flex-col items-center">
+            <figure className="px-10 pt-10">
+              <img src={transparent} alt="Transparan" className="rounded-xl" />
+            </figure>
+            <div className="card-body  text-center">
+              <h2 className="card-title font-bold">Transparan</h2>
+              <p style={{ textAlign: "left" }}>
+                Semua transaksi atau pemilihan akan secara transparan karena
+                menggunakan teknologi blockchain sebagai penyimpanan data
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col  ">
+            <figure className="px-10 pt-10">
+              <img src={aman} alt="Aman" className="rounded-xl" />
+            </figure>
+            <div className="card-body  text-center">
+              <h2 className="card-title">Aman</h2>
+              <p style={{ textAlign: "left" }}>
+                Semua data pemilih akan aman dan tidak dapat di tracking oleh
+                orang lain dengan tujuan melihat siapa yang dipilih. selain itu,
+                pemilih hanya dapat memilih sebanyak 1 kali sebagai pengguna
+                yang terdaftar, bagi pengguna yang tidak terdaftar hanya bisa
+                melihat hasil dari pemilihan di halaman Home
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col ">
+            <figure className="px-10 pt-10">
+              <img
+                src={decentral}
+                alt="Bersifat Desentralisasi!"
+                className="rounded-xl"
+              />
+            </figure>
+            <div className="card-body  text-center">
+              <h2 className="card-title">Terdesentralisasi</h2>
+              <p style={{ textAlign: "left" }}>
+                Platform ini bersifat terdesentralisasi, tidak ada pihak
+                tertentu yang mengelola. Admin hanya bertugas untuk Meverifikasi
+                pendaftaran sebagai anggota baru
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col ">
+            <figure className="px-10 pt-10">
+              <img
+                src={funtion}
+                alt="Fungsi yang luas!"
+                className="rounded-xl"
+              />
+            </figure>
+            <div className="card-body  text-center">
+              <h2 className="card-title">Fungsi yang luas</h2>
+              <p style={{ textAlign: "left" }}>
+                Platform ini memiliki fungsi yang luas, pemilih dapat mengakses
+                pemilihan Presiden, Kepala Daerah (Gubernur, Walikota dan
+                Bupati), anggota DPR (DPR RI, DPR Provinsi dan DPR Kab/Kota)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full p-4 text-center mt-24">
+        <h5 className="mb-20 text-3xl font-bold  dark:black ">
+          Partai Poiitik yang Berpartisipasi
         </h5>
-        {/* <p className="mb-9 text-base text-gray-500 sm:text-lg dark:text-gray-400">
-          Cek semua partai.
-        </p> */}
-        <div className="grid grid-cols-4 gap-4 items-center justify-center sm:grid-cols-5 rtl:space-x-reverse mb-12">
+
+        <div className="grid grid-cols-4 gap-4 items-center justify-center sm:grid-cols-5 rtl:space-x-reverse mb-24">
           <div className="flex flex-col items-center">
             <img
               src="https://www.svgrepo.com/show/433732/ring-so.svg"
