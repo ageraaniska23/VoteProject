@@ -1,11 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import image1 from "../assets/image/k.jpg";
+// import image1 from "../assets/image/k.jpg";
 import image2 from "../assets/image/wpp1.jpg";
 import imaage3 from "../assets/image/indo.jpg";
-
-const images = [image1, image2, imaage3];
+import image4 from "../assets/image/indo1.jpg";
+import image5 from "../assets/image/indo2.jpg";
+const images = [image2, imaage3, image4, image5];
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -23,12 +24,6 @@ const Hero = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
-  // const handlePrevImage = () => {
-  //   setCurrentImageIndex(
-  //     (prevIndex) => (prevIndex - 1 + images.length) % images.length
-  //   );
-  // };
-
   useEffect(() => {
     const slideshowInterval = setInterval(() => {
       handleNextImage();
@@ -39,16 +34,16 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="bg-white">
+    <div className="bg-gray-800">
       <div
-      className="px-6 sm:py-20 py-10 font-[sans-serif]"
-      style={{
-        backgroundImage: `url(${images[currentImageIndex]})`,
-        minHeight: "35vh", 
-        backgroundSize: "contain", // Tambahkan ini untuk memastikan gambar tidak di-crop
-        backgroundPosition: "center", // Tambahkan ini untuk memastikan gambar ditengah
-      }}
-    >
+        className="px-6 sm:py-20 py-10 font-[sans-serif]"
+        style={{
+          backgroundImage: `url(${images[currentImageIndex]})`,
+          minHeight: "35vh",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="max-w-screen-xl mx-auto text-center text-white mt-24">
           <h1 className="text-5xl max-sm:text-3xl font-extrabold leading-tight mb-4">
             Selamat Datang di KuVt
@@ -74,18 +69,17 @@ const Hero = () => {
       </div>
 
       <section>
-        <div className="flex flex-col items-center px-5 py-8 mx-auto">
+        <div className="flex flex-col items-center px-5 py-8 mx-auto mt-24">
           <div className="flex flex-col w-full mb-8 prose text-left max-w-max lg:max-w-2xl">
             <div className="w-full mx-auto">
-              <h1>A small headline to switch your visitors into users.</h1>
+              <h1>Apa itu KuVt Project?.</h1>
 
               <p>
-                Right. Say that again. No, no, George, look, it's just an act,
-                right? Okay, so 9:00 you're strolling through the parking lot,
-                you see us struggling in the car, you walk up, you open the door
-                and you say, your line, George. Stop it. We're gonna take a
-                little break but we'll be back in a while so, don't nobody go no
-                where.
+                KuVt adalah sebuah platform penyedia layanan voting yang dapat
+                digunakan oleh masyarakat dengan fitur utama yaitu transparan
+                dan aman. Tujuan utama platform ini dibuat adalah untuk mencegah
+                adanya kecurangan dalam pemilihan umum dan memberikan
+                kepercayaan masyarakat terhadap demokrasi yang adil.
               </p>
             </div>
           </div>
@@ -131,6 +125,167 @@ const Hero = () => {
           </div>
         </div>
       </section>
+
+      <div className="w-full p-4 text-center mt-24">
+        <h5 className="mb-9 text-3xl font-bold  dark:black">
+          Diikuti oleh Banyak Partai Politik
+        </h5>
+        {/* <p className="mb-9 text-base text-gray-500 sm:text-lg dark:text-gray-400">
+          Cek semua partai.
+        </p> */}
+        <div className="grid grid-cols-4 gap-4 items-center justify-center sm:grid-cols-5 rtl:space-x-reverse mb-12">
+          <div className="flex flex-col items-center">
+            <img
+              src="https://www.svgrepo.com/show/433732/ring-so.svg"
+              alt="ring"
+              className="w-16 h-16 mb-2"
+            />
+            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+              Partai 1
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <img
+              src="https://www.svgrepo.com/show/433732/ring-so.svg"
+              alt="ring"
+              className="w-16 h-16 mb-2"
+            />
+            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+              Partai 2
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <img
+              src="https://www.svgrepo.com/show/433732/ring-so.svg"
+              alt="ring"
+              className="w-16 h-16 mb-2"
+            />
+            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+              Partai 3
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <img
+              src="https://www.svgrepo.com/show/433732/ring-so.svg"
+              alt="ring"
+              className="w-16 h-16 mb-2"
+            />
+            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+              Partai 4
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <img
+              src="https://www.svgrepo.com/show/433732/ring-so.svg"
+              alt="ring"
+              className="w-16 h-16 mb-2"
+            />
+            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+              Partai 5
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <img
+              src="https://www.svgrepo.com/show/433732/ring-so.svg"
+              alt="ring"
+              className="w-16 h-16 mb-2"
+            />
+            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+              Partai 6
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <img
+              src="https://www.svgrepo.com/show/433732/ring-so.svg"
+              alt="ring"
+              className="w-16 h-16 mb-2"
+            />
+            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+              Partai 7
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <img
+              src="https://www.svgrepo.com/show/433732/ring-so.svg"
+              alt="ring"
+              className="w-16 h-16 mb-2"
+            />
+            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+              Partai 8
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <img
+              src="https://www.svgrepo.com/show/433732/ring-so.svg"
+              alt="ring"
+              className="w-16 h-16 mb-2"
+            />
+            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+              Partai 9
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <img
+              src="https://www.svgrepo.com/show/433732/ring-so.svg"
+              alt="ring"
+              className="w-16 h-16 mb-2"
+            />
+            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+              Partai 10
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <img
+              src="https://www.svgrepo.com/show/433732/ring-so.svg"
+              alt="ring"
+              className="w-16 h-16 mb-2"
+            />
+            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+              Partai 11
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <img
+              src="https://www.svgrepo.com/show/433732/ring-so.svg"
+              alt="ring"
+              className="w-16 h-16 mb-2"
+            />
+            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+              Partai 12
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <img
+              src="https://www.svgrepo.com/show/433732/ring-so.svg"
+              alt="ring"
+              className="w-16 h-16 mb-2"
+            />
+            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+              Partai 13
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <img
+              src="https://www.svgrepo.com/show/433732/ring-so.svg"
+              alt="ring"
+              className="w-16 h-16 mb-2"
+            />
+            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+              Partai 14
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <img
+              src="https://www.svgrepo.com/show/433732/ring-so.svg"
+              alt="ring"
+              className="w-16 h-16 mb-2"
+            />
+            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+              Partai 15
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

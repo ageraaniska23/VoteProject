@@ -13,6 +13,7 @@ import NotLogin from './page/notLogin';
 import About from './page/About';
 import Vote from './page/vote';
 import Contact from './page/Contact';
+import Pilpres from './page/resultsData/Pilpres';
 
 function App() {
   const { isAuthenticated, setIsAuthenticated } = useAuthentication(); // Use useAuthentication hook
@@ -30,6 +31,7 @@ function App() {
         <Route exact path="/notLogin" element={<NotLogin />} />
         <Route exact path="/Contact" element={<Contact />} />
         <Route exact path="/About" element={<About />} />
+        <Route exact path="/Pilpres" element={<Pilpres />} />
       </Routes>
       <Footer />
     </Router>

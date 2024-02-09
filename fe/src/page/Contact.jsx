@@ -120,9 +120,9 @@ const Contact = () => {
               />
               <div className="grow">
                 <h3 className="font-semibold text-gray-800 dark:text-gray-200">
-                  Informasi Perusahaan
+                  Informasi 
                 </h3>
-                <p className="mt-1 text-sm text-gray-500">Kami adalah</p>
+                <p className="mt-1 text-sm text-gray-500">Web voting ini disesiakan untuk meemberikan pengalaman berdemokrasi dalam memilih pemimpin secara transparan</p>
               </div>
             </div>
 
@@ -137,7 +137,7 @@ const Contact = () => {
                   Alamat
                 </h3>
                 <p className="mt-1 text-sm text-gray-500">
-                  Masih keluyuran 
+                  Palembang, Sumatera Selatan 
                 </p>
               </div>
             </div>

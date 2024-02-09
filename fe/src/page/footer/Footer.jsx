@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900">
+    <footer className="bg-gray-600">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center md:flex-row md:items-center md:justify-between">
 
@@ -11,8 +11,8 @@ const Footer = () => {
             <span className="text-white font-semibold">KuVt</span>
           </div>
 
-          <p className="text-xs text-gray-500 mb-4">
-            &copy; 2023. Agera Aniska
+          <p className="text-xs text-gray-300 justify-center mb-4">
+            &copy; 2024. Agera Aniska
           </p>
 
           <ul className="flex justify-center gap-6">

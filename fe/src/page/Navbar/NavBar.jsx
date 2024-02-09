@@ -30,9 +30,10 @@ function NavBar({ setIsAuthenticated, isAuthenticated }) {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       if (scrollPosition > 50) {
-        setNavbarBackground('bg-black dark:bg-gray-900');
+        // setNavbarBackground('bg-black dark:bg-gray-900');
+        setNavbarBackground('backdrop-blur-md scale-100 bg-white/10');
       } else {
-        setNavbarBackground('bg-transparent');
+        setNavbarBackground('backdrop-blur-md scale-100 bg-black/30');
       }
     };
 
