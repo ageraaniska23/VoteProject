@@ -22,7 +22,6 @@
     "chart.js": "^4.4.1",
     "dotenv": "^16.3.1",
     "ethers": "^6.9.0",
-    "faker": "^6.6.6",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "preline": "^2.0.2",
