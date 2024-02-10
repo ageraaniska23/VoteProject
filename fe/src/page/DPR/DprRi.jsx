@@ -22,7 +22,8 @@ const DprRi = () => {
       
 
       <div className="flex justify-center items-center mt-24 mb-64">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> */}
           {/* <!-- Card 1 --> */}
           <div className="card w-96 bg-white shadow-xl flex flex-col">
             <div className="card-body items-center">
@@ -204,7 +205,7 @@ const DprRi = () => {
               </table>
             </div>
           </div>
-          {/* <!-- Card 7 --> */}
+          {/* <!-- Card 8 --> */}
           <div className="card w-96 bg-white shadow-xl">
             <div className="card-body items-center">
               <img
@@ -229,7 +230,7 @@ const DprRi = () => {
               </table>
             </div>
           </div>
-          {/* <!-- Card 6 --> */}
+          {/* <!-- Card 9 --> */}
           <div className="card w-96 bg-white shadow-xl">
             <div className="card-body items-center">
               <img
@@ -254,7 +255,7 @@ const DprRi = () => {
               </table>
             </div>
           </div>
-          {/* <!-- Card 6 --> */}
+          {/* <!-- Card 10 --> */}
           <div className="card w-96 bg-white shadow-xl">
             <div className="card-body items-center">
               <img
@@ -279,7 +280,7 @@ const DprRi = () => {
               </table>
             </div>
           </div>
-          {/* <!-- Card 6 --> */}
+          {/* <!-- Card 11 --> */}
           <div className="card w-96 bg-white shadow-xl">
             <div className="card-body items-center">
               <img
@@ -304,7 +305,7 @@ const DprRi = () => {
               </table>
             </div>
           </div>
-          {/* <!-- Card 6 --> */}
+          {/* <!-- Card 12 --> */}
           <div className="card w-96 bg-white shadow-xl">
             <div className="card-body items-center">
               <img
@@ -329,7 +330,7 @@ const DprRi = () => {
               </table>
             </div>
           </div>
-          {/* <!-- Card 6 --> */}
+          {/* <!-- Card 13 --> */}
           <div className="card w-96 bg-white shadow-xl">
             <div className="card-body items-center">
               <img
@@ -354,7 +355,7 @@ const DprRi = () => {
               </table>
             </div>
           </div>
-          {/* <!-- Card 6 --> */}
+          {/* <!-- Card 14 --> */}
           <div className="card w-96 bg-white shadow-xl">
             <div className="card-body items-center">
               <img
@@ -379,7 +380,7 @@ const DprRi = () => {
               </table>
             </div>
           </div>
-          {/* <!-- Card 6 --> */}
+          {/* <!-- Card 15 --> */}
           <div className="card w-96 bg-white shadow-xl">
             <div className="card-body items-center">
               <img
