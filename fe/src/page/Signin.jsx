@@ -53,6 +53,7 @@ const Authentication = ({ setIsAuthenticated }) => {
         backgroundPosition: "center",
       }}
     >
+      <div className="absolute inset-0 bg-black opacity-40"></div>
       <div className="relative py-3 sm:max-w-xl sm:mx-auto mt-8">
         <div className="text-white backdrop-blur-md scale-100 bg-white/30 rounded-xl sm:p-20">
           <div className="text-center pb-6">

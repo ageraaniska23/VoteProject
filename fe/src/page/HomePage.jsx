@@ -13,6 +13,9 @@ import decentral from "../assets/image/card/desentral.jpg";
 import funtion from "../assets/image/card/function.jpg";
 import aman from "../assets/image/card/aman.jpg";
 
+import background from "../assets/image/pemandangan.jpg";
+import logo from "../assets/image/a.png";
+
 const Hero = () => {
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -39,7 +42,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="bg-white">
+    <div className="">
       <div
         className="px-6 sm:py-20 py-10 font-[sans-serif]"
         style={{
@@ -73,9 +76,17 @@ const Hero = () => {
         </div>
       </div>
 
-      <section>
-        <div className="flex flex-col items-center px-5 py-8 mx-auto mt-24">
-          <div className="flex flex-col w-full prose text-left max-w-max lg:max-w-2xl">
+      <div
+        className="bg-white mt-0 relative"
+        style={{
+          backgroundImage: `url(${background})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-70"></div>
+        <div className="flex flex-col items-center px-5 py-8 mx-auto relative z-10 text-white">
+          <div className="flex flex-col w-full prose text-left max-w-max lg:max-w-2xl mt-24">
             <div className="w-full mx-auto">
               <h1>Apa itu KuVt Project?.</h1>
 
@@ -89,244 +100,116 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="items-center w-full px-5">
-          <div className="flex flex-wrap  w-full mx-auto prose max-w-max lg:max-w-3xl">
+        <div className="items-center w-full px-5 text-white">
+          <div className="flex flex-wrap w-full mx-auto prose max-w-max lg:max-w-3xl">
             <div className="relative lg:px-4">
               <div className="p-8">
                 <h1 className="font-bold">
-                  Di platform ini, anda dapat memilih :
+                  Fitur-fitur pada platform ini dapat memilh:
                 </h1>
-                <li>Pemilihan Presiden</li>
-                <li>Pemilihan Kepala Daerah (Gubernur, Walikota/Bupati)</li>
-                <li>Dewan Perwakilan Rakyat (DPR RI dan DPRD)</li>
+                <ul>
+                  <li>1. Pemilihan Presiden</li>
+                  <li>2. Pemilihan Kepala Daerah (Gubernur, Walikota/Bupati)</li>
+                  <li>3. Pemilihan Dewan Perwakilan Rakyat (DPR RI dan DPRD)</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
-      </section>
 
-      <div className="w-full p-4 text-center mt-24">
-        <h5 className="mb-9 text-3xl font-bold dark:black">Kunggulan KuVt :</h5>
-        <div className="max-w-screen-lg mx-auto grid grid-cols-2 gap-8 justify-center sm:grid-cols-4 rtl:space-x-reverse mb-12">
-          <div className="flex flex-col items-center">
-            <figure className="px-10 pt-10">
-              <img src={transparent} alt="Transparan" className="rounded-xl" />
-            </figure>
-            <div className="card-body  text-center">
-              <h2 className="card-title font-bold">Transparan</h2>
-              <p style={{ textAlign: "left" }}>
-                Semua transaksi atau pemilihan akan secara transparan karena
-                menggunakan teknologi blockchain sebagai penyimpanan data
-              </p>
+        <div className="w-full p-4 text-center mt-24 flex flex-col items-center px-5 py-8 mx-auto relative z-10 text-white">
+          <h5 className="mb-9 text-3xl font-bold dark:black">
+            Kunggulan KuVt :
+          </h5>
+          <div className="max-w-screen-lg mx-auto grid grid-cols-2 gap-8 justify-center sm:grid-cols-4 rtl:space-x-reverse mb-12">
+            <div className="flex flex-col items-center">
+              <figure className="px-10 pt-10">
+                <img
+                  src={transparent}
+                  alt="Transparan"
+                  className="rounded-xl"
+                />
+              </figure>
+              <div className="card-body  text-center">
+                <h2 className="card-title font-bold">Transparan</h2>
+                <p style={{ textAlign: "left" }}>
+                  Semua transaksi atau pemilihan akan secara transparan karena
+                  menggunakan teknologi blockchain sebagai penyimpanan data
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="flex flex-col  ">
-            <figure className="px-10 pt-10">
-              <img src={aman} alt="Aman" className="rounded-xl" />
-            </figure>
-            <div className="card-body  text-center">
-              <h2 className="card-title">Aman</h2>
-              <p style={{ textAlign: "left" }}>
-                Semua data pemilih akan aman dan tidak dapat di tracking oleh
-                orang lain dengan tujuan melihat siapa yang dipilih. selain itu,
-                pemilih hanya dapat memilih sebanyak 1 kali sebagai pengguna
-                yang terdaftar, bagi pengguna yang tidak terdaftar hanya bisa
-                melihat hasil dari pemilihan di halaman Home
-              </p>
+            <div className="flex flex-col  ">
+              <figure className="px-10 pt-10">
+                <img src={aman} alt="Aman" className="rounded-xl" />
+              </figure>
+              <div className="card-body  text-center">
+                <h2 className="card-title">Aman</h2>
+                <p style={{ textAlign: "left" }}>
+                  Semua data pemilih akan aman dan tidak dapat di tracking oleh
+                  orang lain dengan tujuan melihat siapa yang dipilih. selain
+                  itu, pemilih hanya dapat memilih sebanyak 1 kali sebagai
+                  pengguna yang terdaftar, bagi pengguna yang tidak terdaftar
+                  hanya bisa melihat hasil dari pemilihan di halaman Home
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="flex flex-col ">
-            <figure className="px-10 pt-10">
-              <img
-                src={decentral}
-                alt="Bersifat Desentralisasi!"
-                className="rounded-xl"
-              />
-            </figure>
-            <div className="card-body  text-center">
-              <h2 className="card-title">Terdesentralisasi</h2>
-              <p style={{ textAlign: "left" }}>
-                Platform ini bersifat terdesentralisasi, tidak ada pihak
-                tertentu yang mengelola. Admin hanya bertugas untuk Meverifikasi
-                pendaftaran sebagai anggota baru
-              </p>
+            <div className="flex flex-col ">
+              <figure className="px-10 pt-10">
+                <img
+                  src={decentral}
+                  alt="Bersifat Desentralisasi!"
+                  className="rounded-xl"
+                />
+              </figure>
+              <div className="card-body  text-center">
+                <h2 className="card-title">Terdesentralisasi</h2>
+                <p style={{ textAlign: "left" }}>
+                  Platform ini bersifat terdesentralisasi, tidak ada pihak
+                  tertentu yang mengelola. Admin hanya bertugas untuk
+                  Meverifikasi pendaftaran sebagai anggota baru
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="flex flex-col ">
-            <figure className="px-10 pt-10">
-              <img
-                src={funtion}
-                alt="Fungsi yang luas!"
-                className="rounded-xl"
-              />
-            </figure>
-            <div className="card-body  text-center">
-              <h2 className="card-title">Fungsi yang luas</h2>
-              <p style={{ textAlign: "left" }}>
-                Platform ini memiliki fungsi yang luas, pemilih dapat mengakses
-                pemilihan Presiden, Kepala Daerah (Gubernur, Walikota dan
-                Bupati), anggota DPR (DPR RI, DPR Provinsi dan DPR Kab/Kota)
-              </p>
+            <div className="flex flex-col ">
+              <figure className="px-10 pt-10">
+                <img
+                  src={funtion}
+                  alt="Fungsi yang luas!"
+                  className="rounded-xl"
+                />
+              </figure>
+              <div className="card-body  text-center">
+                <h2 className="card-title">Fungsi yang luas</h2>
+                <p style={{ textAlign: "left" }}>
+                  Platform ini memiliki fungsi yang luas, pemilih dapat
+                  mengakses pemilihan Presiden, Kepala Daerah (Gubernur,
+                  Walikota dan Bupati), anggota DPR (DPR RI, DPR Provinsi dan
+                  DPR Kab/Kota)
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="w-full p-4 text-center mt-24">
-        <h5 className="mb-20 text-3xl font-bold  dark:black ">
-          Partai Poiitik yang Berpartisipasi
-        </h5>
-
-        <div className="grid grid-cols-4 gap-4 items-center justify-center sm:grid-cols-5 rtl:space-x-reverse mb-24">
-          <div className="flex flex-col items-center">
-            <img
-              src="https://www.svgrepo.com/show/433732/ring-so.svg"
-              alt="ring"
-              className="w-16 h-16 mb-2"
-            />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
-              Partai 1
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-              src="https://www.svgrepo.com/show/433732/ring-so.svg"
-              alt="ring"
-              className="w-16 h-16 mb-2"
-            />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
-              Partai 2
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-              src="https://www.svgrepo.com/show/433732/ring-so.svg"
-              alt="ring"
-              className="w-16 h-16 mb-2"
-            />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
-              Partai 3
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-              src="https://www.svgrepo.com/show/433732/ring-so.svg"
-              alt="ring"
-              className="w-16 h-16 mb-2"
-            />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
-              Partai 4
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-              src="https://www.svgrepo.com/show/433732/ring-so.svg"
-              alt="ring"
-              className="w-16 h-16 mb-2"
-            />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
-              Partai 5
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-              src="https://www.svgrepo.com/show/433732/ring-so.svg"
-              alt="ring"
-              className="w-16 h-16 mb-2"
-            />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
-              Partai 6
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-              src="https://www.svgrepo.com/show/433732/ring-so.svg"
-              alt="ring"
-              className="w-16 h-16 mb-2"
-            />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
-              Partai 7
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-              src="https://www.svgrepo.com/show/433732/ring-so.svg"
-              alt="ring"
-              className="w-16 h-16 mb-2"
-            />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
-              Partai 8
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-              src="https://www.svgrepo.com/show/433732/ring-so.svg"
-              alt="ring"
-              className="w-16 h-16 mb-2"
-            />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
-              Partai 9
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-              src="https://www.svgrepo.com/show/433732/ring-so.svg"
-              alt="ring"
-              className="w-16 h-16 mb-2"
-            />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
-              Partai 10
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-              src="https://www.svgrepo.com/show/433732/ring-so.svg"
-              alt="ring"
-              className="w-16 h-16 mb-2"
-            />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
-              Partai 11
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-              src="https://www.svgrepo.com/show/433732/ring-so.svg"
-              alt="ring"
-              className="w-16 h-16 mb-2"
-            />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
-              Partai 12
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-              src="https://www.svgrepo.com/show/433732/ring-so.svg"
-              alt="ring"
-              className="w-16 h-16 mb-2"
-            />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
-              Partai 13
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-              src="https://www.svgrepo.com/show/433732/ring-so.svg"
-              alt="ring"
-              className="w-16 h-16 mb-2"
-            />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
-              Partai 14
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-              src="https://www.svgrepo.com/show/433732/ring-so.svg"
-              alt="ring"
-              className="w-16 h-16 mb-2"
-            />
-            <p className="text-lg font-semibold text-gray-900 dark:text-gray-300">
-              Partai 15
-            </p>
+        <div className="w-full p-4 text-center mt-24  relative z-10 ">
+          <h1 className="mb-20 text-3xl font-bold">
+            Partai Poiitik yang Berpartisipasi
+          </h1>
+          <div className="grid grid-cols-4 gap-4 items-center justify-center sm:grid-cols-5 rtl:space-x-reverse mb-24">
+            {/* Sample data for political parties */}
+            {[...Array(15)].map((_, index) => (
+              <div
+                className="flex flex-col items-center bg-transparent p-4"
+                key={index}
+              >
+                <img
+                  src={logo}
+                  alt="ring"
+                  className="w-16 h-16 mb-2"
+                />
+                <p className="text-lg font-semibold">Partai {index + 1}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
