@@ -35,7 +35,7 @@ const Hero = () => {
   useEffect(() => {
     const slideshowInterval = setInterval(() => {
       handleNextImage();
-    }, 2500);
+    }, 3000);
 
     // Cleanup interval on component unmount
     return () => clearInterval(slideshowInterval);
@@ -44,7 +44,7 @@ const Hero = () => {
   return (
     <div className="">
       <div
-        className="px-6 sm:py-20 py-10 font-[sans-serif]"
+        className="px-6 sm:py-20 py-10 font-[sans-serif] transition-all duration-500"
         style={{
           backgroundImage: `url(${images[currentImageIndex]})`,
           minHeight: "40vh",
@@ -109,8 +109,12 @@ const Hero = () => {
                 </h1>
                 <ul>
                   <li>1. Pemilihan Presiden</li>
-                  <li>2. Pemilihan Kepala Daerah (Gubernur, Walikota/Bupati)</li>
-                  <li>3. Pemilihan Dewan Perwakilan Rakyat (DPR RI dan DPRD)</li>
+                  <li>
+                    2. Pemilihan Kepala Daerah (Gubernur, Walikota/Bupati)
+                  </li>
+                  <li>
+                    3. Pemilihan Dewan Perwakilan Rakyat (DPR RI dan DPRD)
+                  </li>
                 </ul>
               </div>
             </div>
@@ -202,11 +206,7 @@ const Hero = () => {
                 className="flex flex-col items-center bg-transparent p-4"
                 key={index}
               >
-                <img
-                  src={logo}
-                  alt="ring"
-                  className="w-16 h-16 mb-2"
-                />
+                <img src={logo} alt="ring" className="w-16 h-16 mb-2" />
                 <p className="text-lg font-semibold">Partai {index + 1}</p>
               </div>
             ))}

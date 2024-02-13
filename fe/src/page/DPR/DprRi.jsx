@@ -1,12 +1,22 @@
 import React from "react";
 import Nav from "../Navigation/nav";
-
+import background from "../../assets/image/as.jpg";
 const DprRi = () => {
   return (
-    <div className="min-h-screen bg-blue-300 flex flex-col">
+    <div
+      className="bg-white m relative min-h-screen flex flex-col"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="absolute inset-0 bg-black opacity-40"></div>
       <Nav />
-      <h1 className="text-white font-serif font-bold text-center text-4xl mt-3">Hasil Suara Pemilihan DPRD Daerah Kab</h1>
-      <div className="flex justify-end mr-12 mt-3 items-center">
+      <h1 className="text-white font-serif font-bold text-center text-4xl mt-3 mx-auto relative z-10">
+        Hasil Suara Pemilihan DPRD Daerah Kab
+      </h1>
+      <div className="flex justify-end mr-12 mt-3 items-center mx-auto relative z-10">
         <div className="stats bg-primary text-primary-content">
           <div className="stat">
             <div className="stat-title text-white">Jumlah Pemilih</div>
@@ -19,11 +29,9 @@ const DprRi = () => {
         </div>
       </div>
 
-      
-
-      <div className="flex justify-center items-center mt-24 mb-64">
+      <div className="flex justify-center items-center mt-24 mb-64 ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> */}
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8"> */}
           {/* <!-- Card 1 --> */}
           <div className="card w-96 bg-white shadow-xl flex flex-col">
             <div className="card-body items-center">
