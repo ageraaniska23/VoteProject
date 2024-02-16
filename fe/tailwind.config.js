@@ -10,5 +10,6 @@ export default {
       animation: ['motion-reduce'],
     },
   },
+  // eslint-disable-next-line no-undef
   plugins: [require("daisyui", "tw-elements/dist/plugin.cjs")],
 }

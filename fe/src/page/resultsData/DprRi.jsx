@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "../Navigation/nav";
 import background from "../../assets/image/as.jpg";
+import Info from "../Info/Info";
 const DprRi = () => {
   return (
     <div
@@ -16,18 +17,7 @@ const DprRi = () => {
       <h1 className="text-white font-serif font-bold text-center text-4xl mt-3 mx-auto relative z-10">
         Hasil Suara Pemilihan DPRD Daerah Kab
       </h1>
-      <div className="flex justify-end mr-12 mt-3 items-center mx-auto relative z-10">
-        <div className="stats bg-primary text-primary-content">
-          <div className="stat">
-            <div className="stat-title text-white">Jumlah Pemilih</div>
-            <div className="stat-value">0000</div>
-          </div>
-          <div className="stat">
-            <div className="stat-title text-white">sudah memilih</div>
-            <div className="stat-value">0000</div>
-          </div>
-        </div>
-      </div>
+      <Info />
 
       <div className="flex justify-center items-center mt-24 mb-64 ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">

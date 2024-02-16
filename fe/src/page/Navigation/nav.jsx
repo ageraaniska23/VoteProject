@@ -39,7 +39,7 @@ const Nav = () => {
         </Link>
 
         <Link
-          to="#"
+          to="/Pilkada"
           className={`flex items-center h-10 px-2 py-2 -mb-px text-center ${
             activeButton === "Pilkada"
               ? "border-b-2 border-blue-700"
@@ -60,6 +60,18 @@ const Nav = () => {
           onClick={() => handleButtonClick("DPR")}
         >
           <span className="mx-1 text-sm sm:text-base"> DPR </span>
+        </Link>
+
+        <Link
+          to="/DPD"
+          className={`flex items-center h-10 px-2 py-2 -mb-px text-center ${
+            activeButton === "DPD"
+              ? "border-b-2 border-blue-700"
+              : "border-b-2 border-transparent"
+          } text-gray-700 bg-transparent sm:px-4 -px-1 dark:text-white whitespace-nowrap cursor-base focus:outline-none  hover:border-blue-700`}
+          onClick={() => handleButtonClick("DPD")}
+        >
+          <span className="mx-1 text-sm sm:text-base"> DPD </span>
         </Link>
       </div>
     </div>

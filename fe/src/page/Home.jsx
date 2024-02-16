@@ -1,22 +1,14 @@
 import React from "react";
-
+import Info from "./Info/Info";
 import Nav from "./Navigation/nav";
 
 const Home = () => (
   <div className="min-h-screen bg-blue-300 flex flex-col">
     <Nav />
-    <div className="flex justify-end mr-12 mt-3 items-center">
-      <div className="stats bg-primary text-primary-content">
-        <div className="stat">
-          <div className="stat-title text-white">Jumlah Pemilih</div>
-          <div className="stat-value">0000</div>
-        </div>
-        <div className="stat">
-          <div className="stat-title text-white">sudah memilih</div>
-          <div className="stat-value">0000</div>
-        </div>
-      </div>
-    </div>
+    <h1 className="text-white font-serif font-bold text-center text-4xl mt-3 mx-auto relative z-10">
+      Selamat datang di Infoemasi Layanan
+    </h1>
+    <Info />
   </div>
 );
 
