@@ -1,5 +1,5 @@
 export const pieChartData = {
-  labels: ['Anis & Muhaimin', 'Prabowo & Gibran', 'Ganjar & Mahfud'],
+  labels: ['Paslon 01', 'Paslon 02', 'Paslon 03'],
   datasets: [
     {
       label: 'Jumlah pemilih',
@@ -13,6 +13,9 @@ export const pieChartData = {
   ],
   options: {
     plugins: {
+      legend: {
+        display: false, // Menyembunyikan legend
+      },
       tooltip: {
         callbacks: {
           label: function (context) {
@@ -32,3 +35,4 @@ export const pieChartData = {
     },
   },
 };
+  
