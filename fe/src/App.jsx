@@ -13,10 +13,7 @@ import NotLogin from './page/notLogin';
 import About from './page/About';
 import Vote from './page/vote';
 import Contact from './page/Contact';
-import Pilpres from './page/resultsData/Pilpres';
-import DprRi from './page/resultsData/DprRi'
-import Pilkada from './page/resultsData/Pilkada';
-import DPD from './page/resultsData/DPD';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const { isAuthenticated, setIsAuthenticated } = useAuthentication(); // Use useAuthentication hook
@@ -34,10 +31,7 @@ function App() {
         <Route exact path="/notLogin" element={<NotLogin />} />
         <Route exact path="/Contact" element={<Contact />} />
         <Route exact path="/About" element={<About />} />
-        <Route exact path="/Pilpres" element={<Pilpres />} />
-        <Route exact path="/Pilkada" element={<Pilkada />} />
-        <Route exact path="/DprRi" element={<DprRi />} />
-        <Route exact path="/DPD" element={<DPD />} />
+
       </Routes>
       <Footer />
     </Router>

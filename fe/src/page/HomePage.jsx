@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // import image1 from "../assets/image/k.jpg";
 import image2 from "../assets/image/wpp1.jpg";
@@ -14,7 +14,7 @@ import funtion from "../assets/image/card/function.jpg";
 import aman from "../assets/image/card/aman.jpg";
 
 import background from "../assets/image/pemandangan.jpg";
-import logo from "../assets/image/a.png";
+// import logo from "../assets/image/a.png";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -70,7 +70,7 @@ const Hero = () => {
               onClick={handleLoginButtonClick}
               className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center bg-blue-500 hover:bg-cyan-400 rounded-md text-white"
             >
-              Voting
+              Start Voting
             </button>
           </div>
         </div>
@@ -85,10 +85,10 @@ const Hero = () => {
         }}
       >
         <div className="absolute inset-0 bg-black opacity-70"></div>
-        <div className="flex flex-col items-center px-5 py-8 mx-auto relative z-10 text-white">
+        <div className="flex flex-col items-center px-5 py-8 mx-auto relative z-10 text-white shadow-lg">
           <div className="flex flex-col w-full prose text-left max-w-max lg:max-w-2xl mt-24">
             <div className="w-full mx-auto">
-              <h1>Apa itu KuVt Project?.</h1>
+              <h1 className="mb-3">Apa itu KuVt Project?.</h1>
 
               <p>
                 KuVt adalah sebuah platform penyedia layanan voting yang dapat
@@ -108,12 +108,15 @@ const Hero = () => {
                   Fitur-fitur pada platform ini dapat memilh:
                 </h1>
                 <ul>
-                  <li>1. Pemilihan Presiden</li>
+                  <li>1. Proses pemilihan yang dapat dipantau secara real-time dan transparan</li>
                   <li>
-                    2. Pemilihan Kepala Daerah (Gubernur, Walikota/Bupati)
+                    2. Mencegah adanaya kecurangan
                   </li>
                   <li>
-                    3. Pemilihan Dewan Perwakilan Rakyat (DPR RI dan DPRD)
+                    3. Hanya pemilih yang terdaftar yang dapat memilih
+                  </li>
+                  <li>
+                    4. Wallet address hanya dapat dipakai sekali dan tidak dapat mendaftar ulang
                   </li>
                 </ul>
               </div>
@@ -136,72 +139,42 @@ const Hero = () => {
               </figure>
               <div className="card-body  text-center">
                 <h2 className="card-title font-bold">Transparan</h2>
-                <p style={{ textAlign: "left" }}>
-                  Semua transaksi atau pemilihan akan secara transparan karena
-                  menggunakan teknologi blockchain sebagai penyimpanan data
-                </p>
               </div>
             </div>
-            <div className="flex flex-col  ">
+            <div className="flex flex-col items-center">
               <figure className="px-10 pt-10">
-                <img src={aman} alt="Aman" className="rounded-xl" />
+                <img src={aman} alt="Transparan" className="rounded-xl" />
               </figure>
               <div className="card-body  text-center">
-                <h2 className="card-title">Aman</h2>
-                <p style={{ textAlign: "left" }}>
-                  Semua data pemilih akan aman dan tidak dapat di tracking oleh
-                  orang lain dengan tujuan melihat siapa yang dipilih. selain
-                  itu, pemilih hanya dapat memilih sebanyak 1 kali sebagai
-                  pengguna yang terdaftar, bagi pengguna yang tidak terdaftar
-                  hanya bisa melihat hasil dari pemilihan di halaman Home
-                </p>
+                <h2 className="card-title font-bold">Aman</h2>
               </div>
             </div>
-            <div className="flex flex-col ">
+            <div className="flex flex-col items-center">
               <figure className="px-10 pt-10">
-                <img
-                  src={decentral}
-                  alt="Bersifat Desentralisasi!"
-                  className="rounded-xl"
-                />
+                <img src={decentral} alt="Transparan" className="rounded-xl" />
               </figure>
               <div className="card-body  text-center">
-                <h2 className="card-title">Terdesentralisasi</h2>
-                <p style={{ textAlign: "left" }}>
-                  Platform ini bersifat terdesentralisasi, tidak ada pihak
-                  tertentu yang mengelola. Admin hanya bertugas untuk
-                  Meverifikasi pendaftaran sebagai anggota baru
-                </p>
+                <h2 className="card-title font-bold">Terdesantralisasi</h2>
               </div>
             </div>
-            <div className="flex flex-col ">
+            <div className="flex flex-col items-center">
               <figure className="px-10 pt-10">
-                <img
-                  src={funtion}
-                  alt="Fungsi yang luas!"
-                  className="rounded-xl"
-                />
+                <img src={funtion} alt="Transparan" className="rounded-xl" />
               </figure>
               <div className="card-body  text-center">
-                <h2 className="card-title">Fungsi yang luas</h2>
-                <p style={{ textAlign: "left" }}>
-                  Platform ini memiliki fungsi yang luas, pemilih dapat
-                  mengakses pemilihan Presiden, Kepala Daerah (Gubernur,
-                  Walikota dan Bupati), anggota DPR (DPR RI, DPR Provinsi dan
-                  DPR Kab/Kota)
-                </p>
+                <h2 className="card-title font-bold">Fungsi Luas</h2>
               </div>
             </div>
           </div>
         </div>
-
-        <div className="w-full p-4 text-center mt-24  relative z-10 ">
+        {/* 
+        <div className="w-full p-4 text-center mt-24  relative z-10 text-white shadow-sm ">
           <h1 className="mb-20 text-3xl font-bold">
             Partai Poiitik yang Berpartisipasi
           </h1>
-          <div className="grid grid-cols-4 gap-4 items-center justify-center sm:grid-cols-5 rtl:space-x-reverse mb-24">
-            {/* Sample data for political parties */}
-            {[...Array(15)].map((_, index) => (
+          <div className="grid grid-cols-4 gap-4 items-center justify-center sm:grid-cols-5 rtl:space-x-reverse mb-24"> */}
+        {/* Sample data for political parties */}
+        {/* {[...Array(15)].map((_, index) => (
               <div
                 className="flex flex-col items-center bg-transparent p-4"
                 key={index}
@@ -209,9 +182,9 @@ const Hero = () => {
                 <img src={logo} alt="ring" className="w-16 h-16 mb-2" />
                 <p className="text-lg font-semibold">Partai {index + 1}</p>
               </div>
-            ))}
-          </div>
-        </div>
+            ))} */}
+        {/* </div> */}
+        {/* </div> */}
       </div>
     </div>
   );

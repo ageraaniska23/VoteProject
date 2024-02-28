@@ -30,11 +30,11 @@ function NavBar({ setIsAuthenticated, isAuthenticated }) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      if (scrollPosition > 50) {
+      if (scrollPosition > 0) {
         // setNavbarBackground('bg-black dark:bg-gray-900');
-        setNavbarBackground('backdrop-blur-md scale-100 bg-black/50');
+        setNavbarBackground('backdrop-blur-md scale-100 bg-gray-950/30');
       } else {
-        setNavbarBackground('backdrop-blur-md scale-100 bg-black/10');
+        setNavbarBackground('backdrop-blur-md scale-100 bg-black/70');
       }
     };
 
@@ -52,21 +52,23 @@ function NavBar({ setIsAuthenticated, isAuthenticated }) {
             <img src="https://www.svgrepo.com/show/92013/vote.svg" className="h-8 " alt="Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">KuVt</span>
           </a>
-          <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse items-center">
+          <div className="flex md:order-2 space-x-3 md:space-x-8 rtl:space-x-reverse items-center">
             <ConnectButton chainStatus="icon" accountStatus="none" />
             {isAuthenticated && (
-              <button
-                onClick={handleLogout}
-                className=""
-              >
-                <span className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat ">
-                  <img
-                    src="https://www.svgrepo.com/show/199918/logout.svg"
-                    alt="Logo"
-                    className="w-6 h-6 max-w-xs transition duration-300 ease-in-out hover:scale-110" 
-                  />
-                </span>
-              </button>
+              <button 
+              onClick={handleLogout} 
+              className="flex items-center bg-blue-600 border border-white rounded-lg p-1 transition duration-300 ease-in-out hover:bg-red-800 font-semibold text-gray-100 dark:text-white hover:text-black">
+              <span className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+                <img
+                  src="https://www.svgrepo.com/show/216725/exit-logout.svg"
+                  alt="Keluar"
+                  className="w-6 h-6 max-w-xs transition duration-300 ease-in-out hover:scale-110"
+                />
+              </span>
+              <span className="ml-1">Exit</span>
+            </button>
+            
+              
             )}
             
             <button
@@ -115,7 +117,7 @@ function NavBar({ setIsAuthenticated, isAuthenticated }) {
                   className="block py-2 px-3 font-bold font-serif text-gray-900 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                   href="/About"
                 >
-                  About Us
+                  About Me
                 </a>
               </li>
             </ul>
@@ -131,7 +133,7 @@ function NavBar({ setIsAuthenticated, isAuthenticated }) {
           className="fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-black bg-opacity-50"
         >
           <div className="relative p-4 w-full max-w-md max-h-full">
-            <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div className="relative bg-gray-700 rounded-lg shadow dark:bg-gray-700">
               <button
                 type="button"
                 onClick={handleCloseModal}
@@ -184,7 +186,7 @@ function NavBar({ setIsAuthenticated, isAuthenticated }) {
                 <button
                   onClick={handleCloseModal}
                   type="button"
-                  className="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
+                  className="text-black bg-gray-100 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
                 >
                   Batal
                 </button>
