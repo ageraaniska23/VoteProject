@@ -1,6 +1,36 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const form = useRef();
+  const [message, setMessage] = useState(null);
+  const [isLoading, setIsLoading] = useState(false); // Step 1
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsLoading(true); // Step 2
+
+    emailjs
+      .sendForm(
+        "service_tflclda",
+        "template_ejlgxfm",
+        form.current,
+        "FTOktC2Oa8uzAwbTs"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setMessage({ type: "success", text: "Message Succes" });
+        },
+        (error) => {
+          console.log(error.text);
+          setMessage({ type: "error", text: "Error!." });
+        }
+      )
+      .finally(() => {
+        setIsLoading(false); // Reset loading state regardless of success or failure
+      });
+  };
   return (
     <div className="min-h-screen px-4 sm:py-4 md:py-8 sm:px-6 lg:px-8 lg:py-14 flex flex-col mx-auto bg-gray-950">
       <div className="max-w-2xl lg:max-w-5xl mx-auto">
@@ -16,102 +46,101 @@ const Contact = () => {
         <div className="mt-12 grid items-center lg:grid-cols-2 gap-6 lg:gap-16">
           <div className="flex flex-col border rounded-xl p-4 sm:p-6 lg:p-8 dark:border-white w-full">
             <h2 className="mb-8 text-xl font-semibold text-gray-800 dark:text-gray-200 text-center">
-              Isi Formulir
+              Tulis Pesan
             </h2>
 
-            <form>
-              <div className="grid gap-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label
-                      htmlFor="hs-firstname-contacts-1"
-                      className="sr-only"
-                    >
-                      First Name
-                    </label>
-                    <input
-                      type="text"
-                      name="hs-firstname-contacts-1"
-                      id="hs-firstname-contacts-1"
-                      className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                      placeholder="First Name"
+            {message && (
+              <div
+                role="alert"
+                className={`alert ${
+                  message.type === "success" ? "alert-success" : "alert-error"
+                }`}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="stroke-current shrink-0 h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  {message.type === "success" ? (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
-                  </div>
-
-                  <div>
-                    <label htmlFor="hs-lastname-contacts-1" className="sr-only">
-                      Last Name
-                    </label>
-                    <input
-                      type="text"
-                      name="hs-lastname-contacts-1"
-                      id="hs-lastname-contacts-1"
-                      className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                      placeholder="Last Name"
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
-                  </div>
-                </div>
+                  )}
+                </svg>
+                <span>{message.text}</span>
+              </div>
+            )}
 
+            <form ref={form} onSubmit={sendEmail} className="mt-8">
+              <div className="grid gap-6">
                 <div>
-                  <label htmlFor="hs-email-contacts-1" className="sr-only">
+                  <label htmlFor="fullname" className="sr-only">
+                    Fullname
+                  </label>
+                  <input
+                    type="text"
+                    name="from_name"
+                    id="username"
+                    autoComplete="name"
+                    className="py-3 px-6 lg:px-64 xl:px-64 w-full border-gray-300 rounded-lg text-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                    placeholder="Name"
+                    style={{ paddingLeft: "10px" }}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="sr-only">
                     Email
                   </label>
                   <input
                     type="email"
-                    name="hs-email-contacts-1"
-                    id="hs-email-contacts-1"
+                    name="user_email"
+                    id="email"
                     autoComplete="email"
-                    className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                    className="py-3 px-6 lg:px-64 xl:px-64 w-full border-gray-300 rounded-lg text-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                     placeholder="Email"
+                    style={{ paddingLeft: "10px" }}
                   />
                 </div>
-
                 <div>
-                  <label htmlFor="hs-phone-number-1" className="sr-only">
-                    Nomor HP
-                  </label>
-                  <input
-                    type="text"
-                    name="hs-phone-number-1"
-                    id="hs-phone-number-1"
-                    className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                    placeholder="No Hp"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="hs-about-contacts-1" className="sr-only">
-                    Pesan
+                  <label htmlFor="message" className="sr-only">
+                    Message
                   </label>
                   <textarea
-                    id="hs-about-contacts-1"
-                    name="hs-about-contacts-1"
+                    id="message"
+                    name="message"
                     rows="4"
-                    className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                    placeholder="Pesan"
+                    className="py-4 px-6 lg:px-64 xl:px-64 w-full border-gray-300 rounded-lg text-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                    placeholder="Message"
+                    style={{ paddingLeft: "10px" }}
                   ></textarea>
                 </div>
               </div>
 
-              <div className="mt-4 grid">
+              <div className="mt-8 lg:mt-12 xl:mt-16">
                 <button
                   type="submit"
-                  className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  value="Send"
+                  className="w-full py-4 px-6 lg:px-8 xl:px-10 inline-flex justify-center items-center  text-lg font-semibold rounded-full  bg-blue-600 text-white hover:text-gray-950 hover:font-bold hover:font-serif hover:bg-green-400"
+                  disabled={isLoading} // Step 3
                 >
-                  Kirim
+                  {isLoading ? "Sending..." : "Send"} {/* Step 3 */}
                 </button>
-              </div>
-
-              <div className="mt-3 text-center">
-                <p className="text-sm text-gray-500">
-                  Kami akan Meninjau Pesan 1-2 hari kerja
-                </p>
               </div>
             </form>
           </div>
 
           <div className="divide-y divide-gray-200 dark:divide-gray-800 w-full">
-
             <div className="flex gap-x-7 py-6">
               <img
                 className="flex-shrink-0 w-6 h-6 mt-1.5 text-gray-800 dark:text-gray-200"
@@ -120,9 +149,12 @@ const Contact = () => {
               />
               <div className="grow">
                 <h3 className="font-semibold text-gray-800 dark:text-gray-200">
-                  Informasi 
+                  Informasi
                 </h3>
-                <p className="mt-1 text-sm text-gray-500">Web voting ini disesiakan untuk meemberikan pengalaman berdemokrasi dalam memilih pemimpin secara transparan</p>
+                <p className="mt-1 text-sm text-gray-500">
+                  Web voting ini disesiakan untuk meemberikan pengalaman
+                  berdemokrasi dalam memilih pemimpin secara transparan
+                </p>
               </div>
             </div>
 
@@ -137,11 +169,10 @@ const Contact = () => {
                   Alamat
                 </h3>
                 <p className="mt-1 text-sm text-gray-500">
-                  Palembang, Sumatera Selatan 
+                  Palembang, Sumatera Selatan
                 </p>
               </div>
             </div>
-
 
             <div className="flex gap-x-7 py-6">
               <img
@@ -178,7 +209,6 @@ const Contact = () => {
                   agraaniska@gmail.com
                 </a>
               </div>
-
             </div>
           </div>
         </div>

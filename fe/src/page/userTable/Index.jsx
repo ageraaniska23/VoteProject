@@ -1,33 +1,30 @@
-import React from 'react';
+import React from "react";
 
 const Index = () => {
   return (
-    <div className="table-responsive ">
-      <table className="table table-xs">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Company</th>
-            <th>Location</th>
-            <th>Last Login</th>
-            <th>Favorite Color</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>1</th>
-            <td>Cy Ganderton</td>
-            <td>Quality Control Specialist</td>
-            <td>Littel, Schaden and Vandervort</td>
-            <td>Canada</td>
-            <td>12/16/2020</td>
-            <td>Blue</td>
-          </tr>
-          {/* Add more rows as needed */}
-        </tbody>
-      </table>
+    <div className="flex flex-col items-center px-10 py-16 mx-auto relative z-0 text-white shadow-lg bg-transparent">
+      <div className="w-full prose text-center max-w-max lg:max-w-2xl mt-0">
+        <table className="rounded-lg overflow-hidden table ">
+        <thead className=" text-white">
+            <tr className="text-center">
+              <th>No.</th>
+              <th>Name</th>
+              <th>Username</th>
+              <th>Emmail</th>
+              <th>Status Pemmilih</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="text-center">
+              <td>1</td>
+              <td>Agera</td>
+              <td>bang Jali</td>
+              <td>ada@gmail.com</td>
+              <td>Ya</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

@@ -32,9 +32,9 @@ function NavBar({ setIsAuthenticated, isAuthenticated }) {
       const scrollPosition = window.scrollY;
       if (scrollPosition > 0) {
         // setNavbarBackground('bg-black dark:bg-gray-900');
-        setNavbarBackground('backdrop-blur-md scale-100 bg-gray-950/30');
+        setNavbarBackground('backdrop-blur-md scale-100 bg-gray-950/700');
       } else {
-        setNavbarBackground('backdrop-blur-md scale-100 bg-black/70');
+        setNavbarBackground('backdrop-blur-md scale-100 bg-black/50');
       }
     };
 
@@ -47,7 +47,7 @@ function NavBar({ setIsAuthenticated, isAuthenticated }) {
   return (
     <>
       <nav  className={`fixed w-full z-20 top-0 ${navbarBackground}`}>
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a className="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="https://www.svgrepo.com/show/92013/vote.svg" className="h-8 " alt="Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">KuVt</span>
@@ -73,7 +73,7 @@ function NavBar({ setIsAuthenticated, isAuthenticated }) {
             
             <button
               onClick={toggleMobileMenu}
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              className="inline-flex items-center text-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-full md:hidden hover:bg-gray-100  focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-500 dark:focus:ring-blue-500"
               aria-controls="navbar-sticky"
               aria-expanded={isMobileMenuOpen ? 'true' : 'false'}
             >

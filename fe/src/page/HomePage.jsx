@@ -13,7 +13,7 @@ import decentral from "../assets/image/card/desentral.jpg";
 import funtion from "../assets/image/card/function.jpg";
 import aman from "../assets/image/card/aman.jpg";
 
-import background from "../assets/image/pemandangan.jpg";
+import background from "../assets/image/aes.jpg";
 // import logo from "../assets/image/a.png";
 
 const Hero = () => {
@@ -84,12 +84,11 @@ const Hero = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-70"></div>
+        <div className="absolute inset-0 bg-black opacity-40"></div>
         <div className="flex flex-col items-center px-5 py-8 mx-auto relative z-10 text-white shadow-lg">
           <div className="flex flex-col w-full prose text-left max-w-max lg:max-w-2xl mt-24">
             <div className="w-full mx-auto">
               <h1 className="mb-3">Apa itu KuVt Project?.</h1>
-
               <p>
                 KuVt adalah sebuah platform penyedia layanan voting yang dapat
                 digunakan oleh masyarakat dengan fitur utama yaitu transparan
@@ -108,15 +107,15 @@ const Hero = () => {
                   Fitur-fitur pada platform ini dapat memilh:
                 </h1>
                 <ul>
-                  <li>1. Proses pemilihan yang dapat dipantau secara real-time dan transparan</li>
                   <li>
-                    2. Mencegah adanaya kecurangan
+                    1. Proses pemilihan yang dapat dipantau secara real-time dan
+                    transparan
                   </li>
+                  <li>2. Mencegah adanaya kecurangan</li>
+                  <li>3. Hanya pemilih yang terdaftar yang dapat memilih</li>
                   <li>
-                    3. Hanya pemilih yang terdaftar yang dapat memilih
-                  </li>
-                  <li>
-                    4. Wallet address hanya dapat dipakai sekali dan tidak dapat mendaftar ulang
+                    4. Wallet address hanya dapat dipakai sekali dan tidak dapat
+                    mendaftar ulang
                   </li>
                 </ul>
               </div>
@@ -129,62 +128,64 @@ const Hero = () => {
             Kunggulan KuVt :
           </h5>
           <div className="max-w-screen-lg mx-auto grid grid-cols-2 gap-8 justify-center sm:grid-cols-4 rtl:space-x-reverse mb-12">
+            {/* Card 1 */}
             <div className="flex flex-col items-center">
-              <figure className="px-10 pt-10">
+              <div className="rounded-xl overflow-hidden bg-white">
                 <img
                   src={transparent}
                   alt="Transparan"
-                  className="rounded-xl"
+                  className="w-full h-full"
+                  style={{ width: "200px", height: "100px" }} // Set fixed dimensions
                 />
-              </figure>
-              <div className="card-body  text-center">
-                <h2 className="card-title font-bold">Transparan</h2>
+              </div>
+              <div className="mt-4">
+                <h2 className="font-bold">Transparan</h2>
               </div>
             </div>
+            {/* Card 2 */}
             <div className="flex flex-col items-center">
-              <figure className="px-10 pt-10">
-                <img src={aman} alt="Transparan" className="rounded-xl" />
-              </figure>
-              <div className="card-body  text-center">
-                <h2 className="card-title font-bold">Aman</h2>
+              <div className="rounded-xl overflow-hidden bg-white">
+                <img
+                  src={aman}
+                  alt="Aman"
+                  className="w-full h-full"
+                  style={{ width: "200px", height: "100px" }} // Set fixed dimensions
+                />
+              </div>
+              <div className="mt-4">
+                <h2 className="font-bold">Aman</h2>
               </div>
             </div>
+            {/* Card 3 */}
             <div className="flex flex-col items-center">
-              <figure className="px-10 pt-10">
-                <img src={decentral} alt="Transparan" className="rounded-xl" />
-              </figure>
-              <div className="card-body  text-center">
-                <h2 className="card-title font-bold">Terdesantralisasi</h2>
+              <div className="rounded-xl overflow-hidden bg-white">
+                <img
+                  src={decentral}
+                  alt="Terdesantralisasi"
+                  className="w-full h-full"
+                  style={{ width: "200px", height: "100px" }} // Set fixed dimensions
+                />
+              </div>
+              <div className="mt-4">
+                <h2 className="font-bold">Terdesantralisasi</h2>
               </div>
             </div>
+            {/* Card 4 */}
             <div className="flex flex-col items-center">
-              <figure className="px-10 pt-10">
-                <img src={funtion} alt="Transparan" className="rounded-xl" />
-              </figure>
-              <div className="card-body  text-center">
-                <h2 className="card-title font-bold">Fungsi Luas</h2>
+              <div className="rounded-xl overflow-hidden bg-white">
+                <img
+                  src={funtion}
+                  alt="Fungsi Luas"
+                  className="w-full h-full"
+                  style={{ width: "200px", height: "100px" }} // Set fixed dimensions
+                />
+              </div>
+              <div className="mt-4">
+                <h2 className="font-bold">Fungsi Luas</h2>
               </div>
             </div>
           </div>
         </div>
-        {/* 
-        <div className="w-full p-4 text-center mt-24  relative z-10 text-white shadow-sm ">
-          <h1 className="mb-20 text-3xl font-bold">
-            Partai Poiitik yang Berpartisipasi
-          </h1>
-          <div className="grid grid-cols-4 gap-4 items-center justify-center sm:grid-cols-5 rtl:space-x-reverse mb-24"> */}
-        {/* Sample data for political parties */}
-        {/* {[...Array(15)].map((_, index) => (
-              <div
-                className="flex flex-col items-center bg-transparent p-4"
-                key={index}
-              >
-                <img src={logo} alt="ring" className="w-16 h-16 mb-2" />
-                <p className="text-lg font-semibold">Partai {index + 1}</p>
-              </div>
-            ))} */}
-        {/* </div> */}
-        {/* </div> */}
       </div>
     </div>
   );

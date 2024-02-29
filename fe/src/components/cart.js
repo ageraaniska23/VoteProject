@@ -4,12 +4,12 @@ import { useState } from "react";
 const useChartData = () => {
   const [options] = useState({
     chart: {
-      width:500,
+      width: 500,
       type: "pie",
     },
     labels: ["Paslon 01", "Paslon 02", "Paslon 03"],
     legend: {
-      position: "bottom", 
+      position: "bottom",
     },
     responsive: [
       {
@@ -24,9 +24,13 @@ const useChartData = () => {
         },
       },
     ],
+    // Menambahkan style untuk label
+    style: {
+      colors: ["#FFFFFF"], // Set warna putih untuk teks label
+    },
   });
 
-  const [series] = useState([44, 90, 13]);
+  const [series] = useState([94, 90, 13]);
 
   return { options, series };
 };

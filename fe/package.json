@@ -13,6 +13,7 @@
     "eject": "vite eject"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.12.1",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.1.1",
     "@material-tailwind/react": "^2.1.8",
@@ -20,7 +21,7 @@
     "@web3-react/core": "^8.2.3",
     "apexcharts": "^3.46.0",
     "bootstrap": "^5.3.3",
-    "chart.js": "^4.4.1",
+    "chart.js": "^4.4.2",
     "dotenv": "^16.3.1",
     "ethers": "^6.9.0",
     "follow-redirects": ">=1.15.4",
