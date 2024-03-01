@@ -30,7 +30,7 @@ const useChartData = () => {
     },
   });
 
-  const [series] = useState([94, 90, 13]);
+  const [series] = useState([31000000, 75000000, 21000000]);
 
   return { options, series };
 };

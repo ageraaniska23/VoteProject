@@ -5,6 +5,7 @@ import ReactApexChart from "react-apexcharts";
 import useChartData from "../components/cart";
 import Info from "./Info/Info";
 import TableT from "./userTable/Index";
+import InfoWinner from "./userTable/InfoWinner";
 
 const Home = () => {
   const { options, series } = useChartData();
@@ -18,10 +19,13 @@ const Home = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-40"></div>
+      <div className="absolute inset-0 bg-black opacity-50"></div>
       <h1 className="text-gray-50 font-serif font-bold text-center text-4xl mt-24 mx-auto relative z-10">
         Selamat Datang Di KuVt
       </h1>
+      <h3 className="text-gray-50 font-serif font-bold text-center text-lg mt-2 mx-auto relative z-10">
+        Layanan Voting Transparan
+      </h3>
       <Info />
       <div className="flex justify-center items-center mt-24 ">
         <div id="chart">
@@ -44,10 +48,14 @@ const Home = () => {
           />
         </div>
       </div>
+
       <div className="justify-center items-center ">
-        <h3 
-        className="text-4xl text-gray-50 mx-auto relative z-10 text-center mt-24 mb-0 font-semibold">
-          Daftar Nama Pemilih
+      <h3 className="text-3xl text-gray-50 mx-auto relative z-10 text-center mt-24  font-semibold">
+          Hasil Sementara
+        </h3>
+        <InfoWinner />
+        <h3 className="text-3xl text-gray-50 mx-auto relative z-10 text-center mt-24 mb-0 font-semibold">
+          Daftar dan Status Pemilih
         </h3>
         <TableT />
       </div>

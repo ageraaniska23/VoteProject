@@ -1,16 +1,16 @@
 import React from 'react';
 
 const Info = () => {
-  const totalPemilih = 30000000;
-  const sudahMemilih = 14000000;
+  const totalPemilih = 823236;
+  const sudahMemilih = 641844;
   const progress = (sudahMemilih / totalPemilih) * 100;
 
   return (
-    <div className="flex justify-start md:justify-center md:mr-10 mt-12 items-center mx-auto relative z-10  ">
-      <div className="stats bg-cyan-400 text-primary-content p-2 md:p-0 md:flex md:items-center text-center md:w-auto rounded-3xl">
+    <div className="flex justify-center mt-12 mx-auto relative z-10">
+      <div className="stats bg-cyan-400 text-primary-content p-1 md:p-1 md:flex md:items-center text-center rounded-3xl">
         <div className="stat md:mr-8">
           <div className="stat-title text-white text-sm">Progres</div>
-          <div className="stat-value items-center justify-center text-sm">{progress.toFixed(4)}%</div>
+          <div className="stat-value text-sm">{progress.toFixed(2)}%</div>
         </div>
         <div className="stat md:mr-8">
           <div className="stat-title text-white text-sm">Jumlah Pemilih</div>

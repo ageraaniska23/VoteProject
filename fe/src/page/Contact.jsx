@@ -138,7 +138,6 @@ const Contact = () => {
                   ></textarea>
                 </div>
               </div>
-
               <div className="mt-8 lg:mt-12 xl:mt-16">
                 <button
                   type="submit"
@@ -169,7 +168,6 @@ const Contact = () => {
                 </p>
               </div>
             </div>
-
             <div className="flex gap-x-7 py-6">
               <img
                 className="flex-shrink-0 w-6 h-6 mt-1.5 text-gray-800 dark:text-gray-200"
@@ -185,7 +183,6 @@ const Contact = () => {
                 </p>
               </div>
             </div>
-
             <div className="flex gap-x-7 py-6">
               <img
                 className="flex-shrink-0 w-6 h-6 mt-1.5 text-gray-800 dark:text-gray-200"

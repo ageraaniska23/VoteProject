@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import VisiModal from "./Modals/VisiModal";
 import Modal from "./Modals/VoteModal"; // Import the new modal component
 import Naruto from "../assets/image/Vote/naruto.jpg";
@@ -20,13 +20,13 @@ const Vote = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-700 flex flex-col justify-center items-center">
-      <h2 className="text-gray-50 font-bold text-4xl mb-12 justify-center mt-16">
+    <div className="m relative min-h-screen bg-gray-700 flex flex-col justify-center items-center">
+      <h2 className="text-gray-50 font-bold text-4xl mb-12 justify-center text-center mt-24">
         PEMILIHAN TIM TERBAIK
       </h2>
-      <div className="flex flex-col md:flex-row gap-4">
+      <div className="flex flex-col md:flex-row gap-8">
         {/* Card 1 */}
-        <div className="card w-full md:w-96 bg-base-100 shadow-xl">
+        <div className="card w-full md:w-80 lg:w-96 bg-base-100 shadow-xl">
           <figure>
             <img src={Naruto} alt="Shoes" />
           </figure>
@@ -60,7 +60,7 @@ const Vote = () => {
           onClose={() => document.getElementById("modal_1").close()}
         />
         {/* Card 2 */}
-        <div className="card w-full md:w-96 bg-base-100 shadow-xl">
+        <div className="card w-full md:w-80 lg:w-96 bg-base-100 shadow-xl">
           <figure>
             <img src={Naruto} alt="Shoes" />
           </figure>
@@ -95,7 +95,7 @@ const Vote = () => {
         />
 
         {/* Card 3 */}
-        <div className="card w-full md:w-96 bg-base-100 shadow-xl">
+        <div className="card w-full md:w-80 lg:w-96 bg-base-100 shadow-xl">
           <figure>
             <img src={Naruto} alt="Shoes" />
           </figure>

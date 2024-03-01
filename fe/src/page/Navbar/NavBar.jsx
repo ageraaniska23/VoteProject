@@ -57,12 +57,12 @@ function NavBar({ setIsAuthenticated, isAuthenticated }) {
             {isAuthenticated && (
               <button 
               onClick={handleLogout} 
-              className="flex items-center rounded-badge bg-blue-600 border border-white p-1 transition duration-300 ease-in-out hover:bg-red-800 font-semibold text-gray-100 dark:text-white hover:text-black">
+              className="flex items-center rounded-badge bg-blue-500 border border-white p-1 transition duration-300 ease-in-out hover:bg-red-800 font-semibold text-gray-100 dark:text-white hover:text-black">
               <span className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
                 <img
                   src="https://www.svgrepo.com/show/216725/exit-logout.svg"
                   alt="Keluar"
-                  className="w-6 h-6 max-w-xs transition duration-300 ease-in-out hover:scale-110"
+                  className="w-6 h-6 max-w-xs transition duration-300 ease-in-out hover:scale-110 "
                 />
               </span>
               <span className="ml-1">Exit</span>
