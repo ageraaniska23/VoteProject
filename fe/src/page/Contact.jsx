@@ -4,11 +4,22 @@ import emailjs from "@emailjs/browser";
 const Contact = () => {
   const form = useRef();
   const [message, setMessage] = useState(null);
-  const [isLoading, setIsLoading] = useState(false); // Step 1
+  const [isLoading, setIsLoading] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setIsLoading(true); // Step 2
+    setIsLoading(true);
+
+    const fullname = form.current["from_name"].value;
+    const email = form.current["user_email"].value;
+    const message = form.current["message"].value;
+
+    // Validasi form
+    if (!fullname || !email || !message) {
+      setIsLoading(false);
+      setMessage({ type: "error", text: "Please fill in all fields." });
+      return;
+    }
 
     emailjs
       .sendForm(
@@ -20,17 +31,18 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
-          setMessage({ type: "success", text: "Message Succes" });
+          setMessage({ type: "success", text: "Message sent successfully." });
         },
         (error) => {
           console.log(error.text);
-          setMessage({ type: "error", text: "Error!." });
+          setMessage({ type: "error", text: "Error sending message." });
         }
       )
       .finally(() => {
-        setIsLoading(false); // Reset loading state regardless of success or failure
+        setIsLoading(false);
       });
   };
+
   return (
     <div className="min-h-screen px-4 sm:py-4 md:py-8 sm:px-6 lg:px-8 lg:py-14 flex flex-col mx-auto bg-gray-950">
       <div className="max-w-2xl lg:max-w-5xl mx-auto">
@@ -131,10 +143,10 @@ const Contact = () => {
                 <button
                   type="submit"
                   value="Send"
-                  className="w-full py-4 px-6 lg:px-8 xl:px-10 inline-flex justify-center items-center  text-lg font-semibold rounded-full  bg-blue-600 text-white hover:text-gray-950 hover:font-bold hover:font-serif hover:bg-green-400"
-                  disabled={isLoading} // Step 3
+                  className="w-full py-4 px-6 lg:px-8 xl:px-10 inline-flex justify-center items-center  text-lg font-semibold rounded-full  bg-blue-600 text-white hover:text-black hover:font-bold hover:font-serif hover:bg-green-400"
+                  disabled={isLoading}
                 >
-                  {isLoading ? "Sending..." : "Send"} {/* Step 3 */}
+                  {isLoading ? "Sending....." : "Send"}
                 </button>
               </div>
             </form>
@@ -180,28 +192,10 @@ const Contact = () => {
                 src="https://www.svgrepo.com/show/477054/email-download.svg"
                 alt="Email Open"
               />
-
-              {/* <div className="grow">
-                <h3 className="font-semibold text-gray-800 dark:text-gray-200">
-                  Hubungi dengan Email
-                </h3>
-                <p className="mt-1 text-sm text-gray-500">
-                  Jika Anda ingin mengirim email kepada kami, silakan Hubungi
-                </p>
-                <a
-                  className="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  href="#"
-                >
-                  agraaniska@gmail.com
-                </a>
-              </div> */}
               <div className="grow">
                 <h3 className="font-semibold text-gray-800 dark:text-gray-200">
-                  Hubungi dengan Email
+                  Contact
                 </h3>
-                <p className="mt-1 text-sm text-gray-500">
-                  Jika Anda ingin mengirim email kepada kami, silakan Hubungi
-                </p>
                 <a
                   className="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                   href="mailto:agraaniska@gmail.com?subject=Subject%20of%20the%20email&body=Hello%20Agra%20Aniska,%0A%0A"

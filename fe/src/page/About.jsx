@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import ProfileImage from "../assets/image/pro.jpg";
+import Modal from "./Modals/VoteModal";
 
 const AboutUs = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center text-center text-gray-500 dark:text-gray-400 bg-gray-900 dark:bg-gray-950">
       <div>
@@ -19,82 +26,23 @@ const AboutUs = () => {
           <a>Agera Aniska</a>
         </h3>
         <p className="text-lg">Web Dev & Solidity Developer</p>
-        <p className="text-lg">Mahasiswa Sistem Komputer Universitas Sriwijaya</p>
+        <p className="text-lg">
+          Mahasiswa Sistem Komputer Universitas Sriwijaya
+        </p>
         <ul className="flex justify-center mt-4 space-x-4">
-          <li>
-            <a
-              href="#"
-              className="text-[#39569c] hover:text-gray-900 dark:hover:text-white"
-            >
-              <img
-                className="w-8 h-8"
-                src="https://www.svgrepo.com/show/465458/link-alt-2.svg"
-                alt="Link"
-              />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://web.facebook.com/Agera.aniska238"
-              className="text-[#00acee] hover:text-gray-900 dark:hover:text-white"
-            >
-              <img
-                className="w-8 h-8"
-                src="https://www.svgrepo.com/show/448224/facebook.svg"
-                alt="Facebook"
-              />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/ageraaniska23"
-              className="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300"
-            >
-              <img
-                className="w-8 h-8"
-                src="https://www.svgrepo.com/show/312259/github.svg"
-                alt="Github"
-              />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/ara.anka/"
-              className="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
-            >
-              <img
-                className="w-8 h-8"
-                src="https://www.svgrepo.com/show/452231/instagram.svg"
-                alt="Instagram"
-              />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/agera-aniska-0298a8225/"
-              className="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
-            >
-              <img
-                className="w-8 h-8"
-                src="https://www.svgrepo.com/show/452051/linkedin.svg"
-                alt="Linkedin"
-              />
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white"
-            >
-              <img
-                className="w-8 h-8"
-                src="https://www.svgrepo.com/show/354560/whatsapp.svg"
-                alt="WhatsApp"
-              />
-            </a>
-          </li>
+          {/* Social media links */}
         </ul>
       </div>
+      <button
+        onClick={toggleModal}
+        className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        type="button"
+      >
+        Toggle modal
+      </button>
+
+      {/* Modal */}
+      <Modal isOpen={isModalOpen} onClose={toggleModal} />
     </div>
   );
 };

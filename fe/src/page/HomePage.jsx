@@ -1,7 +1,5 @@
-/* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import image1 from "../assets/image/k.jpg";
 import image2 from "../assets/image/wpp1.jpg";
 import imaage3 from "../assets/image/indo.jpg";
 import image4 from "../assets/image/indo1.jpg";
@@ -14,11 +12,11 @@ import funtion from "../assets/image/card/function.jpg";
 import aman from "../assets/image/card/aman.jpg";
 
 import background from "../assets/image/aes.jpg";
-// import logo from "../assets/image/a.png";
 
 const Hero = () => {
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showImage, setShowImage] = useState(true);
 
   const handleHomeButtonClick = () => {
     navigate("/Home");
@@ -29,7 +27,11 @@ const Hero = () => {
   };
 
   const handleNextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setShowImage(false);
+    setTimeout(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setShowImage(true);
+    }, 500); // Adjust the timeout as needed for smoother transition
   };
 
   useEffect(() => {
@@ -50,25 +52,32 @@ const Hero = () => {
           minHeight: "40vh",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          opacity: showImage ? 1 : 0, // Apply fade in/out effect
         }}
       >
         <div className="max-w-screen-xl mx-auto text-center text-white mt-24">
-          <h1 className="text-5xl max-sm:text-3xl font-extrabold leading-tight mb-4">
+          <h1
+            className="text-5xl max-sm:text-3xl font-extrabold leading-tight mb-4"
+            style={{ textShadow: "0 2px 4px rgba(0, 0, 0, 0.3)" }}
+          >
             Selamat Datang di KuVt
           </h1>
-          <p className="text-lg mb-8">
+          <p
+            className="text-lg mb-8"
+            style={{ textShadow: "0 2px 4px rgba(0, 0, 0, 0.3)" }}
+          >
             Ayo Sukseskan Demokrasi Dengan Aman, Damai, Transparan dan Jujur.
           </p>
-          <div className="flex flex-col  space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+          <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
             <button
               onClick={handleHomeButtonClick}
-              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center bg-blue-500 hover:bg-cyan-400 rounded-md text-white"
+              className="inline-flex justify-center items-center py-3 px-5 font-medium text-center bg-blue-500 hover:bg-cyan-400 rounded-badge text-white"
             >
               Explore
             </button>
             <button
               onClick={handleLoginButtonClick}
-              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center bg-blue-500 hover:bg-cyan-400 rounded-md text-white"
+              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center bg-blue-500 hover:bg-cyan-400 rounded-badge text-white"
             >
               Start Voting
             </button>
