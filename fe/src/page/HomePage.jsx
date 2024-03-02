@@ -31,7 +31,7 @@ const Hero = () => {
     setTimeout(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
       setShowImage(true);
-    }, 500); // Adjust the timeout as needed for smoother transition
+    }, 10); 
   };
 
   useEffect(() => {

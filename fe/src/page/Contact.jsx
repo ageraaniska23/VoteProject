@@ -56,7 +56,7 @@ const Contact = () => {
         </div>
 
         <div className="mt-12 grid items-center lg:grid-cols-2 gap-6 lg:gap-16">
-          <div className="flex flex-col border rounded-xl p-4 sm:p-6 lg:p-8 dark:border-white w-full">
+          <div className="flex flex-col border rounded-3xl p-4 sm:p-6 lg:p-8 dark:border-white w-full">
             <h2 className="mb-8 text-xl font-semibold text-gray-800 dark:text-gray-200 text-center">
               Tulis Pesan
             </h2>
@@ -64,7 +64,7 @@ const Contact = () => {
             {message && (
               <div
                 role="alert"
-                className={`alert ${
+                className={`alert text-gray-50 ${
                   message.type === "success" ? "alert-success" : "alert-error"
                 }`}
               >
@@ -105,7 +105,7 @@ const Contact = () => {
                     name="from_name"
                     id="username"
                     autoComplete="name"
-                    className="py-3 px-6 lg:px-64 xl:px-64 w-full border-gray-300 rounded-lg text-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                    className="py-3 px-6 lg:px-64 xl:px-64 w-full border border-gray-300 rounded-3xl text-lg focus:border-blue-500 focus:ring-blue-500 bg-transparent dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                     placeholder="Name"
                     style={{ paddingLeft: "10px" }}
                   />
@@ -119,7 +119,7 @@ const Contact = () => {
                     name="user_email"
                     id="email"
                     autoComplete="email"
-                    className="py-3 px-6 lg:px-64 xl:px-64 w-full border-gray-300 rounded-lg text-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                    className="py-3 px-6 lg:px-64 xl:px-64 w-full border border-gray-300 rounded-3xl text-lg focus:border-blue-500 focus:ring-blue-500 bg-transparent dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                     placeholder="Email"
                     style={{ paddingLeft: "10px" }}
                   />
@@ -132,7 +132,7 @@ const Contact = () => {
                     id="message"
                     name="message"
                     rows="4"
-                    className="py-4 px-6 lg:px-64 xl:px-64 w-full border-gray-300 rounded-lg text-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                    className="py-3 px-6 lg:px-64 xl:px-64 w-full border border-gray-300 rounded-3xl text-lg focus:border-blue-500 focus:ring-blue-500 bg-transparent dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                     placeholder="Message"
                     style={{ paddingLeft: "10px" }}
                   ></textarea>

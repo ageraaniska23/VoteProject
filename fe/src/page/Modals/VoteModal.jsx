@@ -10,7 +10,7 @@ const Modal = ({ isOpen, onClose }) => {
       className="fixed top-0 right-0 left-0 z-50 flex items-center justify-center w-full h-screen bg-black bg-opacity-50"
     >
       <div className="relative p-4 w-full max-w-md">
-        <div className="relative bg-gray-800 rounded-lg shadow dark:bg-gray-700">
+        <div className="relative bg-gray-800 rounded-3xl py-8 shadow dark:bg-gray-700">
           {/* Modal header */}
           <button
             onClick={onClose}
@@ -60,14 +60,14 @@ const Modal = ({ isOpen, onClose }) => {
               <button
                 onClick={onClose}
                 type="button"
-                className="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center"
+                className="text-gray-50 hover:text-gray-950 bg-red-600 hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-badge text-sm inline-flex items-center px-5 py-2.5 text-center"
               >
                 Ya, VOTE SEKARANG
               </button>
               <button
                 onClick={onClose}
                 type="button"
-                className="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-blue-800 rounded-lg border border-gray-200 hover:bg-cyan-400 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                className="py-2.5 px-5 text-gray-50 hover:text-gray-950 bg-blue-600 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-badge text-sm inline-flex items-center text-center"
               >
                 Tidak, BATAL
               </button>

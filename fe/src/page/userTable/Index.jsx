@@ -9,7 +9,6 @@ const Index = () => {
             <thead className="text-black bg-cyan-300">
               <tr className="text-center">
                 <th className="px-4 py-2 border border-gray-300">No.</th>
-                <th className="px-4 py-2 border border-gray-300">Name</th>
                 <th className="px-4 py-2 border border-gray-300">Username</th>
                 <th className="px-4 py-2 border border-gray-300">Email</th>
                 <th className="px-4 py-2 border border-gray-300">Identity Card</th>
@@ -20,7 +19,6 @@ const Index = () => {
             <tbody>
               <tr className="text-center">
                 <td className="px-4 py-2 border border-gray-300">1</td>
-                <td className="px-4 py-2 border border-gray-300">Ageradasdsa</td>
                 <td className="px-4 py-2 border border-gray-300">bang Jali</td>
                 <td className="px-4 py-2 border border-gray-300">dasdasdasdada@gmail.com</td>
                 <td className="px-4 py-2 border border-gray-300">090313213a12312312312</td>
@@ -29,7 +27,6 @@ const Index = () => {
               </tr>
               <tr className="text-center">
                 <td className="px-4 py-2 border border-gray-300">2</td>
-                <td className="px-4 py-2 border border-gray-300">Ageradasdsa</td>
                 <td className="px-4 py-2 border border-gray-300">bang Jali</td>
                 <td className="px-4 py-2 border border-gray-300">dasdasdasdada@gmail.com</td>
                 <td className="px-4 py-2 border border-gray-300">090313213a12312312312</td>
@@ -38,7 +35,6 @@ const Index = () => {
               </tr>
               <tr className="text-center">
                 <td className="px-4 py-2 border border-gray-300">3</td>
-                <td className="px-4 py-2 border border-gray-300">Ageradasdsa</td>
                 <td className="px-4 py-2 border border-gray-300">bang Jali</td>
                 <td className="px-4 py-2 border border-gray-300">dasdasdasdada@gmail.com</td>
                 <td className="px-4 py-2 border border-gray-300">090313213a12312312312</td>

@@ -1,5 +1,4 @@
-// Home.js
-import React from "react";
+import React, { useState, useEffect } from "react";
 import background from "../assets/image/aes.jpg";
 import ReactApexChart from "react-apexcharts";
 import useChartData from "../components/cart";
@@ -9,6 +8,35 @@ import InfoWinner from "./userTable/InfoWinner";
 
 const Home = () => {
   const { options, series } = useChartData();
+  const [chartWidth, setChartWidth] = useState(500); // Initial width
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Adjust chart width based on screen size
+      const screenWidth = window.innerWidth;
+      let newWidth;
+    
+      if (screenWidth > 700) {
+        // For larger screens, set a fixed width
+        newWidth = 650;
+      } else {
+        // For smaller screens, adjust width dynamically
+        newWidth = screenWidth - 500;
+      }
+    
+      setChartWidth(newWidth);
+    };
+    
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Call handleResize initially to set initial width
+    handleResize();
+
+    // Cleanup function to remove event listener
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty dependency array ensures useEffect runs only once
 
   return (
     <div
@@ -23,11 +51,11 @@ const Home = () => {
       <h1 className="text-gray-50 font-serif font-bold text-center text-4xl mt-24 mx-auto relative z-10">
         Selamat Datang Di KuVt
       </h1>
-      <h3 className="text-gray-50 font-serif font-bold text-center text-lg mt-2 mx-auto relative z-10">
+      <h3 className="text-gray-50 font-serif font-bold text-center text-3xl mt-2 mx-auto relative z-10">
         Layanan Voting Transparan
       </h3>
       <Info />
-      <div className="flex justify-center items-center mt-24 ">
+      <div className="flex justify-center items-center mt-24">
         <div id="chart">
           <ReactApexChart
             options={{
@@ -44,7 +72,7 @@ const Home = () => {
             }}
             series={series}
             type="pie"
-            width={500}
+            width={chartWidth}
           />
         </div>
       </div>
