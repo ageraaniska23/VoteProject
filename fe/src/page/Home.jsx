@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import{ useState, useEffect } from "react";
 import background from "../assets/image/aes.jpg";
 import ReactApexChart from "react-apexcharts";
 import useChartData from "../components/cart";
 import Info from "./Info/Info";
 import TableT from "./userTable/Index";
 import InfoWinner from "./userTable/InfoWinner";
+
 
 const Home = () => {
   const { options, series } = useChartData();
@@ -47,7 +48,7 @@ const Home = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="absolute inset-0 bg-black opacity-70 "></div>
       <h1 className="text-gray-50 font-serif font-bold text-center text-4xl mt-24 mx-auto relative z-10">
         Selamat Datang Di KuVt
       </h1>

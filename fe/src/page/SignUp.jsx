@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { writeContract } from "@wagmi/core";
-import SignABi from "../assets/Abi/Authentication.json";
+import LoginAbi from "../assets/Abi/KuVt.json";
+
 import backgroundImage from "../assets/image/wpp1.jpg";
 
-const SignUp = ({ setIsAuthenticated }) => {
+const Authentication = ({ setIsAuthenticated }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [signupError, setSignupError] = useState(null);
+  const [loginError, setLoginError] = useState(null);
   const navigate = useNavigate();
 
   const handleInputChange = () => {
-    if (signupError) {
-      setSignupError(null);
+    if (loginError) {
+      setLoginError(null);
     }
   };
 
@@ -23,21 +25,23 @@ const SignUp = ({ setIsAuthenticated }) => {
     try {
       const username = event.target.username.value;
       const password = event.target.password.value;
+      const name = event.target.name.value;
       const email = event.target.email.value;
+      const nik = event.target.nik.value;
 
       await writeContract({
-        address: "0xA0b9Dc94FDbcE89EBF9B3a99918207c5fB5efa24",
-        abi: SignABi,
+        address: "0xaEA318FE514338f309559796bB44eF70A14C6eeD",
+        abi: LoginAbi,
         functionName: "signUp",
-        args: [username, password, email],
+        args: [name, username, password, email, nik],
       });
 
       setIsLoading(false);
       setIsAuthenticated(true);
-      navigate("/Login");
+      navigate("/Vote");
     } catch (error) {
-      console.error("Sign-up failed:", error);
-      setSignupError("Akun Sudah Ada");
+      console.error("Sign up failed:", error);
+      setLoginError("Failed to sign up. Please try again.");
       setIsLoading(false);
     }
   };
@@ -51,42 +55,31 @@ const SignUp = ({ setIsAuthenticated }) => {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-40"></div>
+      <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="relative max-w-md mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-white backdrop-blur-lg bg-white/10 rounded-3xl py-10 px-12 sm:px-13 md:px-12 lg:px-24 mt-12">
-          <div className="text-center pb-2">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-7 font-bold">
+        <div className="text-white backdrop-blur-md bg-white/10 rounded-3xl py-10 px-10 sm:px-10 md:px-12 lg:px-24">
+          <div className="text-center pb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-7">
               Sign Up
             </h1>
           </div>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-8">
             <div className="relative">
               <input
                 className="w-full py-3 px-4 bg-transparent border-b-2 border-gray-300 text-absolute focus:outline-none focus:border-gray-500"
                 type="text"
                 name="name"
-                onChange=""
                 placeholder="Full Name"
+                onChange={handleInputChange}
               />
             </div>
-
-            <div className="relative">
-              <input
-                className="w-full py-3 px-4 bg-transparent border-b-2 border-gray-300 text-absolute focus:outline-none focus:border-gray-500"
-                type="number"
-                name="idCard"
-                onChange=""
-                placeholder="ID Card"
-              />
-            </div>
-
             <div className="relative">
               <input
                 className="w-full py-3 px-4 bg-transparent border-b-2 border-gray-300 text-absolute focus:outline-none focus:border-gray-500"
                 type="text"
                 name="username"
-                onChange={handleInputChange}
                 placeholder="Username"
+                onChange={handleInputChange}
               />
             </div>
             <div className="relative">
@@ -94,8 +87,8 @@ const SignUp = ({ setIsAuthenticated }) => {
                 className="w-full py-3 px-4 bg-transparent border-b-2 border-gray-300 text-absolute focus:outline-none focus:border-gray-500"
                 type="password"
                 name="password"
-                onChange={handleInputChange}
                 placeholder="Password"
+                onChange={handleInputChange}
               />
             </div>
             <div className="relative">
@@ -103,15 +96,24 @@ const SignUp = ({ setIsAuthenticated }) => {
                 className="w-full py-3 px-4 bg-transparent border-b-2 border-gray-300 text-absolute focus:outline-none focus:border-gray-500"
                 type="email"
                 name="email"
-                onChange={handleInputChange}
                 placeholder="Email"
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="relative">
+              <input
+                className="w-full py-3 px-4 bg-transparent border-b-2 border-gray-300 text-absolute focus:outline-none focus:border-gray-500"
+                type="number"
+                name="nik"
+                placeholder="NIK"
+                onChange={handleInputChange}
               />
             </div>
 
-            {signupError && <div className="text-red-500">{signupError}</div>}
+            {loginError && <div className="text-red-500">{loginError}</div>}
             <button
               type="submit"
-              className="w-full py-3 px-4 bg-blue-600 hover:bg-indigo-700 text-gray-50 hover:text-gray-950 font-semibold rounded-badge focus:outline-none focus:ring focus:ring-indigo-200"
+              className="w-full py-3 px-4 bg-blue-600 hover:bg-indigo-700 text-gray-50 font-semibold rounded-badge hover:text-black focus:outline-none focus:ring focus:ring-indigo-200"
               disabled={isLoading}
             >
               {isLoading ? "Loading..." : "Sign Up"}
@@ -123,7 +125,7 @@ const SignUp = ({ setIsAuthenticated }) => {
               to="/Login"
               className="text-blue-500 hover:underline transition-all"
             >
-              Login
+              Login.
             </Link>
           </p>
         </div>
@@ -132,4 +134,4 @@ const SignUp = ({ setIsAuthenticated }) => {
   );
 };
 
-export default SignUp;
+export default Authentication;

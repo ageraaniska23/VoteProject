@@ -1,3 +1,4 @@
+
 const InfoWinner = () => {
   return (
     <div className="flex flex-col items-center px-4 md:px-10 py-16 mx-auto relative z-0 text-white shadow-lg bg-transparent">
@@ -14,23 +15,12 @@ const InfoWinner = () => {
             </thead>
             <tbody>
               <tr className="text-center">
-                <td className="px-4 py-2 border border-gray-300">1</td>
-                <td className="px-4 py-2 border border-gray-300">Sasuke & Naruto</td>
-                <td className="px-4 py-2 border border-gray-300">75000000</td>
+                <td className="px-4 py-2 border border-gray-300"></td>
+                <td className="px-4 py-2 border border-gray-300"></td>
+                <td className="px-4 py-2 border border-gray-300"></td>
                 
               </tr>
-              <tr className="text-center">
-                <td className="px-4 py-2 border border-gray-300">2</td>
-                <td className="px-4 py-2 border border-gray-300">omon & blunder</td>
-                <td className="px-4 py-2 border border-gray-300">31000000</td>
-                
-              </tr>
-              <tr className="text-center">
-                <td className="px-4 py-2 border border-gray-300">3</td>
-                <td className="px-4 py-2 border border-gray-300">Anak Mami </td>
-                <td className="px-4 py-2 border border-gray-300">21000000</td>
-                
-              </tr>
+              
             </tbody>
           </table>
         </div>

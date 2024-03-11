@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { writeContract } from "@wagmi/core";
-import LoginAbi from "../assets/Abi/Authentication.json";
+import LoginAbi from "../assets/Abi/KuVt.json";
+
 
 import backgroundImage from "../assets/image/wpp1.jpg";
 
@@ -27,7 +28,7 @@ const Authentication = ({ setIsAuthenticated }) => {
       const password = event.target.password.value;
 
       await writeContract({
-        address: "0xA0b9Dc94FDbcE89EBF9B3a99918207c5fB5efa24",
+        address: "0xaEA318FE514338f309559796bB44eF70A14C6eeD",
         abi: LoginAbi,
         functionName: "login",
         args: [username, password],

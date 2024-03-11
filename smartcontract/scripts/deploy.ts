@@ -1,9 +1,9 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const dataAuthentication = await ethers.deployContract("Authentication");
-  await dataAuthentication.waitForDeployment();
-  const User = await dataAuthentication.getAddress();
+  const dataKuVt = await ethers.deployContract("KuVt");
+  await dataKuVt.waitForDeployment();
+  const User = await dataKuVt.getAddress();
   console.log(`Report: ${User}`);
 }
 

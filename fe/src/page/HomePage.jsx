@@ -71,13 +71,13 @@ const Hero = () => {
           <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
             <button
               onClick={handleHomeButtonClick}
-              className="inline-flex justify-center items-center py-3 px-5 font-medium text-center bg-blue-500 hover:bg-cyan-400 rounded-badge text-white"
+              className="inline-flex justify-center items-center py-3 px-5 font-medium text-center bg-blue-500 hover:bg-cyan-400 rounded-badge text-gray-50 hover:text-gray-950 hover:font-bold"
             >
               Explore
             </button>
             <button
               onClick={handleLoginButtonClick}
-              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center bg-blue-500 hover:bg-cyan-400 rounded-badge text-white"
+              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center bg-blue-500 hover:bg-cyan-400 rounded-badge text-gray-50 hover:text-gray-950 hover:font-bold"
             >
               Start Voting
             </button>
