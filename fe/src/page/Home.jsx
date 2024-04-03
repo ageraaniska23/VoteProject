@@ -80,11 +80,11 @@ const Home = () => {
 
       <div className="justify-center items-center ">
       <h3 className="text-3xl text-gray-50 mx-auto relative z-10 text-center mt-24  font-semibold">
-          Hasil Sementara
+          Tabel Hasil pemilihan
         </h3>
         <InfoWinner />
         <h3 className="text-3xl text-gray-50 mx-auto relative z-10 text-center mt-24 mb-0 font-semibold">
-          Daftar dan Status Pemilih
+          Daftar Semua Pemilih
         </h3>
         <TableT />
       </div>

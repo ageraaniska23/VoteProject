@@ -2,9 +2,9 @@
 // VisiModal.jsx
 import React from "react";
 
-const VisiModal = ({ id, title, content1, content2, onClose }) => {
+const VisiModal = ({ id, title, content1, content2, isOpen, onClose }) => {
   return (
-    <dialog id={id} className="modal">
+    <dialog id={id} className={`modal ${isOpen ? 'modal-open' : ''}`}>
       <div className="modal-box w-11/12 max-w-3xl bg-gray-700">
         <h3 className="font-bold text-lg text-gray-50 text-center">{title}</h3>
         <p className="py-4 text-gray-50">{content1}</p>
@@ -20,4 +20,3 @@ const VisiModal = ({ id, title, content1, content2, onClose }) => {
 };
 
 export default VisiModal;
-

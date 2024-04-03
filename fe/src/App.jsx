@@ -46,7 +46,6 @@ function App() {
           path="/SignUp"
           element={isAuthenticated ? <Navigate to="/Vote" /> : <SignUp />}
         />
-
         <Route
           exact
           path="/Vote"

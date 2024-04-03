@@ -3,7 +3,6 @@ pragma solidity 0.8.19;
 
 contract KuVt {
     address public Admin;
-
     struct User {
         string name; 
         string username;
@@ -83,7 +82,7 @@ contract KuVt {
         require(!usedNiks[encryptedNik], "NIK already registered");
 
         users[msg.sender] = User({
-            name: _name, // Menyimpan nilai name
+            name: _name,
             username: _username,
             passwordHash: passwordHash,
             email: _email,
@@ -145,16 +144,12 @@ contract KuVt {
     function verifyUserByUsername(string memory _username) public onlyAdmin {
         bytes32 usernameHash = sha256(bytes(_username));
         address userAddress = userAddressesByHash[usernameHash];
-        
         require(userAddress != address(0), "User not found");
         require(pendingUsers[userAddress], "User is not pending verification");
-        
         // Mark the user as verified
         users[userAddress].isVerified = true;
-        
         // Remove the user from pendingUsers
         delete pendingUsers[userAddress];
-    
         // Add the user to dataUser only if verified
         if(users[userAddress].isVerified) {
             dataUser.push(users[userAddress]);
@@ -180,8 +175,6 @@ contract KuVt {
         emit UserLoggedIn(msg.sender, identifierHash);
     }
 
-    
-
     function viewAllUsers() external view returns (uint256 totalUsers) {
         totalUsers = totalVerifiedUsers + addedUsersByAdmin;
     }
@@ -189,7 +182,6 @@ contract KuVt {
     function getAllUser() public view returns (User[] memory) {
         return dataUser;
     }
-
     function addPaslon(uint _noUrut, string memory _candidateKetua, string memory _wakil, string memory _visi, string memory _misi) public onlyAdmin {
         DataPaslon memory newPaslon = DataPaslon({
             noUrut: _noUrut,
